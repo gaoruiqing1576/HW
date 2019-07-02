@@ -1,0 +1,265 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+a:hover{
+	text-decoration: none;
+	color:#A4A4A4;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+.container>.layout{
+	width:100%;
+	height:36px;
+	background-color: #f1f1f1;
+}
+
+a{
+	text-decoration: none;
+}
+
+.container{
+	margin:0 auto;
+}
+.layout_left ul li{
+	padding:3px 3px;
+	float:left;
+	color:#A4A4A4;
+}
+.layout_right ul li{
+	padding:3px 3px;
+	float:left;
+	color:#A4A4A4;
+}
+.layout ul{
+	list-style:none;
+}
+a{
+	color:#A4A4A4;
+	font-size:12px;
+}
+
+
+/*下拉菜单*/
+
+.drop_down_one{
+	position: relative;
+}
+.drop_down_one img{
+	 width:14px;
+	 height: 14px;;
+}
+
+.drop_down_one .out{
+	width:84px;
+	height:125px;;
+	text-align: center;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:28px;
+	left:0px;
+	border-radius: 5px;
+	z-index:999;
+}
+
+.drop_down_one .out div{
+	height: 20px;;
+	color:#A4A4A4;
+	font-size: 12px;
+	margin-top:7px;
+}
+
+
+.drop_down_one:hover .out{
+	display: block;
+}
+.drop_down_one:hover{
+	background: #fff;
+}
+
+/*下拉菜单--网站导航*/
+.drop_down_two{
+	position: relative;
+}
+.drop_down_two a img{
+	width:14px;
+	height: 14px;
+}
+.drop_down_two .icon{
+
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:30px;
+	left:-420px;
+	z-index:999;
+}
+.drop_down_two .icon div:first-child{
+	text-align: center;
+}
+.drop_down_two .icon div{
+	width:100px;
+	height:100px;
+	padding:20px 10px 10px 10px;
+
+}
+
+.drop_down_two .icon div p img{
+	width:30px;
+	height: 30px;
+}
+
+.drop_down_two .icon h2{
+	font-size: 16px;
+	color:#333;
+}
+.drop_down_two .icon span{
+	font-size: 12px;
+	color:#A4A4A4;
+}
+.drop_down_two:hover .icon{
+	display: flex;	  /*绝对定位 会覆盖浮动*/
+}
+.drop_down_two:hover{
+	background: #fff;
+}
+
+/*下拉菜单--手机版*/
+.drop_down_three{
+	position: relative;
+}
+.drop_down_three a img{
+	width:14px;
+	height: 14px;
+}
+.drop_down_three .icon{
+	width:270px;
+	height: 388px;
+	box-sizing: border-box;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:29px;
+	left:-200px;
+	z-index:999;
+}
+.drop_down_three .icon div{
+	width:270px;
+	height: 129px;
+	padding:20px;
+}
+.drop_down_three .icon img{
+	width:90px;
+	height: 90px;
+	float: left;
+}
+.drop_down_three .icon p{
+	float: left;
+	padding:33px 0px 0px 20px;
+	margin:0px;
+	color:#3A3A3A;
+	font-size:16px;
+}
+
+.drop_down_three:hover .icon{
+	display:block;
+}
+.drop_down_three:hover{
+	background: #fff;
+}
+
+/*购物车下拉菜单*/
+.drop_down_four{
+	position: relative;
+}
+.drop_down_four a img{
+	width:12px;
+	height:12px;
+	margin:0px 2px 4px 0px;
+}
+.drop_down_four div{
+	width:300px;
+	height:200px;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:30px;
+	left:-216px;
+	z-index:999;
+}
+.drop_down_four div img{
+	width:70px;
+	height:70px;
+	margin:40px 0px 40px 100px;
+}
+.drop_down_four div p{
+	text-align: center;
+	color:#A3A3A3;
+	font-size:16px;
+}
+.drop_down_four:hover div{
+	display: block;
+}
+.drop_down_four:hover{
+	background: #fff;
+}
+
+
+
+
+
+.header{
+	width:1200px;
+	height:40px;
+	color:#3A3A3A;
+	font-size:12px;
+	margin:0 auto;
+	background-color: #f1f1f1;
+
+}
+.header .layout{
+	width:1200px;
+	height:50%;
+}
+.header .layout .left a img{
+	width:205px;
+	height:36px;
+	float:left;
+	margin-right:10px;
+}
+
+.header .layout .left .naver ul li{
+	list-style:none;
+	margin:0 5px;
+	float:left;
+
+}
+.header .layout .left .naver ul li a{
+	margin:0 5px;
+}
+.header .layout .left .naver ul li a img{
+	width:74px;
+	height:24px;
+	margin-top:7px;
+}
+
+
+.header .layout .left .naver a{
+	color:#333;
+	font-size:16px;
+	line-height:35px;
+}
+
+
+.header .layout .right input{
+	width:300px;height:30px;
+	float:right;
+	outline:0;
+	border-radius:25px;
+	margin-top:5px;
+	background: #f0f0f0;
+}
+
+
