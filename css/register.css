@@ -1,0 +1,95 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+
+.font_size{
+    color:#333;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+    color: #007dff;
+}
+
+.container{
+    background: #f2f2f2;
+}
+
+.container .header{
+    width:100%;
+    height:67px;
+    background: #333;
+}
+.container .header .header_center{
+    width:960px;
+    height:67px;
+    margin:0 auto;
+    display: flex;
+    padding-top:10px;
+}
+.container .header .header_center .logo{
+    padding:5px 15px 0px 0px;
+}
+.container .header .header_center .text{
+    color:#fff;
+    line-height: 45px;
+}
+.container .header .header_center .text b{
+    padding-right: 15px;
+}
+
+.container .body{
+    width:960px;
+    height:782px;
+    margin:0 auto;
+    padding-top:20px;
+}
+.container .body .body_top{
+    width:100%;
+    height:35px;
+}
+.container .body .body_top div{
+    width:140px;
+    height:35px;
+}
+.container .body .body_top .reg_phone{
+    background: #b40707;
+    float:left;
+    margin-right:20px;
+}
+.container .body .body_top .reg_phone img,.reg_email img{
+    width:27px;
+    height:28px;
+    float: left;
+    margin:3px 10px;
+}
+.container .body .body_top .reg_phone p,.reg_email p{
+    width:66px;
+    height:35px;
+    float: left;
+    font-size:16px;
+    color:#fff;
+    line-height: 31px;
+    text-align: center;
+}
+
+
+.container .body .body_top .reg_email{
+    background: #CCC;
+    float:left;
+}
+.container .body .body_top .login{
+    float:right;
+    line-height: 31px;
+}
+.container .body .body_top .login p{
+    float: left;
+}
+.container .body .body_top .login a{
+    float: right;
+    font-size: 14px;
+}
+
+.container .body .body_middle{
+    width:960px;
+    height:598px;
+    background: #fff;
+}
