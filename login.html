@@ -16,40 +16,63 @@
 			</div>	
 		</div>
 		<div class="nav"><span>依据《网络安全法》，为保障您的帐号安全与正常使用，请尽快绑定您的手机号，感谢您的理解及支持！</span></div>
-		<div class="middle">
-			<img class="b_g" src="images/background/login_default_bg.png" alt="">
-			<div class="login">
-				<div class="one">
-					<span>账号登录</span>	
-					<span>|</span>	
-					<span>扫码登录</span>	
-				</div>
-				<div class="two">
-					<input type="text" placeholder="手机号/邮件地址/华为号">
-					<input type="text" placeholder="密码">
-				</div>
-				<div class="varify">
-					<a href="#">短信验证码登录</a>
-				</div>
-				<button>登录</button>
-				<div class="three">
-					<span>
+		<div class="b_g">
+			<div class="middle">
+				<div class="login">
+					<div class="one">
+						<span data-toggle="login" data-target="zhanghao">账号登录</span>	
+						<span>|</span>	
+						<span data-toggle="login" data-target="saoma">扫码登录</span>	
+					</div>
+					<div id="zhanghao">
+						<div class="two">
+							<input type="text" placeholder="手机号/邮件地址/华为号">
+							<input type="text" placeholder="密码">
+						</div>
+						<div class="varify" data-toggle="varify" data-target="varify">
+							<a href="#">短信验证码登录</a>
+						</div>
+						<button>登录</button>
+						<div class="three">
+							<span>
+								<input id="jzhwzh" type="checkbox" title="在公共电脑上不要选择此项">
+								<label for="jzhwzh"> 记住华为账号</label>
+							</span>
+							<span><a class="more" href="#">更多</a></span>
+						</div>
+						<div class="four">
+							<div><a href="#">注册账号</a> | <a href="#">忘记密码？</a></div>
+						</div>
+						<div class="five">
+							<p>其他登录方式</p>
+						</div>
+						<div class="six">
+							<a href="#"><img src="images/background/QQ.png"></a>
+							<a href="#"><img src="images/background/微博1.png"></a>
+							<a href="#"><img src="images/background/支付宝.png"></a>
+							<a href="#"><img src="images/background/微信1.png"></a>
+						</div>
+					</div>
+					<div id="saoma">
+						<div>
+							<img src="images/background/下载.png">
+						</div>
+						<p>使用<a href="">华为移动服务APP</a>扫一扫</p>
+						<p>若您使用华为手机，请进入“设置”>“华为帐号”扫码登录。</p>
+					</div>
+					<div id="varify">
+						<span data-toggle="ret" data-target="varify"><a href="#">< 返回</a></span>
+						<div>
+							<input type="text" placeholder="请输入手机号">
+							<input type="text" placeholder="短信验证码">
+							<input type="submit" value="获取验证码">
+						</div>
+						<span>
 							<input id="jzhwzh" type="checkbox" title="在公共电脑上不要选择此项">
 							<label for="jzhwzh"> 记住华为账号</label>
-					</span>
-					<span><a class="more" href="#">更多</a></span>
-				</div>
-				<div class="four">
-					<div><a href="#">注册账号</a> | <a href="#">忘记密码？</a></div>
-				</div>
-				<div class="five">
-					<p>其他登录方式</p>
-				</div>
-				<div class="six">
-					<img src="images/background/QQ.png">
-					<img src="images/background/微博1.png">
-					<img src="images/background/支付宝.png">
-					<img src="images/background/微信1.png">
+						</span> 
+						<button>登录</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -61,5 +84,58 @@
 			Copyright © 2011-2019  华为软件技术有限公司  版权所有  保留一切权利  苏B2-20070200号 | 苏ICP备09062682号-9
 			</p>
 		</div>
+		<script>
+		(function(){
+			var login=document.querySelectorAll(
+				"div.login>div>[data-toggle=login]"
+			);
+			console.log(login);
+			var id1=login[0].dataset.target;
+			var div1=document.getElementById(id1);
+			var id2=login[1].dataset.target;
+			var div2=document.getElementById(id2);
+			login[1].onclick=function(){
+				login[0].style.color="black";
+				login[1].style.color="red";
+				if(div2.style.display="none"){
+					div2.style.display="block";
+					div1.style.display="none";
+				}
+			}	
+			login[0].onclick=function(){
+				login[0].style.color="red";
+				login[1].style.color="black";
+				if(div1.style.display="none"){
+					div1.style.display="block";
+					div2.style.display="none";
+				}
+			}
+			//执行手机登录
+			var varify=document.querySelectorAll(
+				"div.login>div>[data-toggle=varify]"
+			)[0];
+			console.log(varify);
+
+			varify.onclick=function(){
+				var id=this.dataset.target;
+				console.log(id);
+				var div=document.getElementById(id);
+				console.log(div);
+				div.style.display="block";
+				var ret=document.querySelectorAll(
+					"div.login>div>[data-toggle=ret]"
+				)[0];
+				console.log(ret)
+				ret.onclick=function(){
+					var id=this.dataset.target;
+					console.log(id);
+					var div=document.getElementById(id);
+					console.log(div);
+					div.style.display="none";
+				}
+			}
+			//返回
+		})();
+		</script>
 	</body>
 </html>
