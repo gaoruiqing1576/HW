@@ -9,8 +9,8 @@
 			<script src="boot/js/jquery.min.js"></script>
 			<script src="boot/js/popper.min.js"></script>
 			<script src="boot/js/bootstrap.min.js"></script>
-			<link rel="stylesheet" href="css/detail.css"/>
-			<script src="js/detail.js"></script>
+            <link rel="stylesheet" href="css/detail.css"/>
+
 	</head>
     <body>
         <div class="container p-0">
@@ -19,20 +19,20 @@
                 <div class="pro_detail">
                     <div class="pic">
                         <div class="min">
-                                <img onmouseover="magnify()" src="images/phone-pic/big/04_bg.png">
+                                <img onmouseover="magnify()" src="images/phone-pic/big/04_bg.png" class="my-big">
                                 <div class="fd"></div>
                         </div>
                         <div class="max">
-                                <img src="images/phone-pic/big/04_bg.png">
+                                <img src="images/phone-pic/big/04_bg.png" class="my-big">
                         </div>
                         <div class="pic_sm">
                             <ul>
                                 <a href="#"><</a>
-                                <li><img src="images/phone-pic/small/04_sm.png" alt=""></li>
-                                <li><img src="images/phone-pic/small/04_sm.png" alt=""></li>
-                                <li><img src="images/phone-pic/small/04_sm.png" alt=""></li>
-                                <li><img src="images/phone-pic/small/04_sm.png" alt=""></li>
-                                <li><img src="images/phone-pic/small/04_sm.png" alt=""></li>
+                                <li><img src="images/phone-pic/small/04_sm.png" data-target="images/phone-pic/big/04_bg.png" class="my-small"></li>
+                                <li><img src="images/phone-pic/small/05_sm.jpg" data-target="images/phone-pic/big/05_bg.jpg" class="my-small"></li>
+                                <li><img src="images/phone-pic/small/06_sm.jpg" data-target="images/phone-pic/big/06_bg.jpg" class="my-small"></li>
+                                <li><img src="images/phone-pic/small/07_sm.jpg" data-target="images/phone-pic/big/07_bg.png" class="my-small"></li>
+                                <li><img src="images/phone-pic/small/08_sm.jpg" data-target="images/phone-pic/big/08_bg.png" class="my-small"></li>
                                 <a href="#">></a>
                             </ul>
                         </div>
@@ -65,11 +65,20 @@
                                 <span>
                                     <a href="#"><img src="images/phone-pic/small/02_sm.jpg"幻夜紫 alt="">幻夜黑</a> 
                                 </span>
+                                <span>
+                                    <a href="#"><img src="images/phone-pic/small/03_sm.jpg"幻夜紫 alt="">天空之境</a> 
+                                </span>
+                                <span>
+                                    <a href="#"><img src="images/phone-pic/small/05_sm.jpg"幻夜紫 alt="">极光色</a> 
+                                </span>
                         </div>
                         <div class="version font_size">
                                         选择版本
                                         <span>
                                             <a href="#">全网通 6GB+64GB</a> 
+                                        </span>  
+                                        <span>
+                                            <a href="#">全网通 6GB+128GB</a> 
                                         </span>  
                                         <span>
                                             <a href="#">全网通 6GB+128GB</a> 
@@ -213,8 +222,10 @@
                     <li>*以上页面中的数据为理论值，均来自华为内部实验室，于特定测试环境下所得（请见各项具体说明），实际使用中可能因产品个体差异、软件版本、使用条件和环境因素不同略有不同，请以实际使用的情况为准。</li>
                     <li>*为提供尽可能准确的产品信息、规格参数、产品特性，华为或荣耀可能实时调整和修订以上页面中的文字表述、图片效果等内容，以求与实际产品性能、规格、指数、零部件等信息相匹配，由于产品批次和生产供应因素实时变化，如遇确有进行上述修改和调整必要的情形，恕不专门通知。</li>
                     </ul>
-                </div>
-                <hr>
+            </div>
+            <hr>
         </div>
     </body>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/detail.js"></script>
 </html>
