@@ -22,6 +22,9 @@ a{
 .container{
 	margin:0 auto;
 }
+.layout_left,.layout_right{
+	height:100%;
+}
 .layout_left ul li{
 	padding:3px 3px;
 	float:left;
@@ -37,7 +40,7 @@ a{
 }
 a{
 	color:#A4A4A4;
-	font-size:12px;
+	font-size:14px;
 }
 
 
@@ -216,7 +219,7 @@ a{
 	color:#3A3A3A;
 	font-size:12px;
 	margin:0 auto;
-	background-color: #fff;
+	background-color: #f1f1f1;
 
 }
 .header .layout{
@@ -255,7 +258,12 @@ a{
 	position: relative;
 }
 
-.computer_drop .computer{
+.computer_drop .computer,
+.computer_drop .phone,
+.computer_drop .home,
+.computer_drop .wear,
+.computer_drop .accessory,
+.computer_drop .value_services{
 	width: 1200px;
 	height:270px;
 	background: #fff;
@@ -267,58 +275,18 @@ a{
 	left:-273px;
 }
 .computer_drop .phone{
-	width: 1200px;
-	height:270px;
-	background: #fff;
-	border-bottom:1px solid #ddd;
-	float: left;
-	display:none;
-    position: absolute;
-    top:35px;
 	left:-221px;
 }
 .computer_drop .home{
-	width: 1200px;
-	height:270px;
-	background: #fff;
-	border-bottom:1px solid #ddd;
-	float: left;
-	display:none;
-    position: absolute;
-    top:35px;
 	left:-477px;
 }
 .computer_drop .wear{
-	width: 1200px;
-	height:270px;
-	background: #fff;
-	border-bottom:1px solid #ddd;
-	float: left;
-	display:none;
-    position: absolute;
-    top:35px;
 	left:-388px;
 }
 .computer_drop .accessory{
-	width: 1200px;
-	height:270px;
-	background: #fff;
-	border-bottom:1px solid #ddd;
-	float: left;
-	display:none;
-    position: absolute;
-    top:35px;
 	left:-556px;
 }
 .computer_drop .value_services{
-	width: 1200px;
-	height:270px;
-	background: #fff;
-	border-bottom:1px solid #ddd;
-	float: left;
-	display:none;
-    position: absolute;
-    top:35px;
 	left:-639px;
 }
 
@@ -379,6 +347,7 @@ a{
 .computer_drop .accessory .bottom ul,
 .computer_drop .value_services .bottom ul{
 	list-style: none;
+
 }
 .computer_drop .computer .bottom ul li,
 .computer_drop .phone .bottom ul li,
@@ -390,7 +359,8 @@ a{
 	text-align: center;
 	float:left;
 	margin-left: 12px;
-	margin-bottom: 12px;
+	box-shadow: 0 0 3px #ddd;
+	box-sizing: border-box;
 }
 .computer_drop .computer .bottom ul li img,
 .computer_drop .phone .bottom ul li img,
@@ -398,9 +368,16 @@ a{
 .computer_drop .home .bottom ul li img,
 .computer_drop .accessory .bottom ul li img,
 .computer_drop .value_services .bottom ul li img{
-	margin-top:20px;
-	width:150px;height:150px;
-	margin-top:-15px;
+	width:150px;height:140px;
+	transition: all .5s linear;
+}
+.computer_drop .computer .bottom ul li img:hover,
+.computer_drop .phone .bottom ul li img:hover,
+.computer_drop .wear .bottom ul li img:hover,
+.computer_drop .home .bottom ul li img:hover,
+.computer_drop .accessory .bottom ul li img:hover,
+.computer_drop .value_services .bottom ul li img:hover{
+	transform: scale(1.1)
 }
 
 .computer_drop .computer .bottom ul li p:nth-child(2),
@@ -432,10 +409,17 @@ a{
 	display: block;
 }
 .computer_drop:hover{
-	background: #f1f1f1;
+	background: #fff;
 }
 
 
+/*搜索框*/
+.header .layout .right{
+	width:300px;
+	height:30px;
+	position: relative;
+	float: right;
+}
 .header .layout .right .text{
 	width:250px;height:30px;
 	float:right;
@@ -444,24 +428,55 @@ a{
 	border-bottom-left-radius:25px;
 	margin-top:5px;
 	padding:10px;
-	background: #ddd;
+	background: #fff;
 
 }
-.header .layout .right .submit{
-	width:50px;height:30px;
+.header .layout .right .text:hover{
+	border:1px solid #ccc;
+	border-right:0;
+}
+.header .layout .right button{
+	width:40px;height:30px;
 	float:right;
 	outline:0;border:0px;
-	margin-top:5px;
-	border-top-right-radius:25px;
-	border-bottom-right-radius:25px;
+	margin:5px 5px 0px 0px;
+	border-radius:0px 25px 25px 0px;
 	background-size: 25px 25px;
 	background-image:url(../images/background/搜索.png);
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-color: #ddd;
-}
-.header .layout .right .submit:hover{
+	background-color: #fff;
 	cursor: pointer;
-
 }
 
+.header .layout .right div{
+	position: absolute;
+	top:8px; 
+	left:141px;
+
+}
+.header .layout .right div a{
+	color:#f00;
+}
+
+/*搜索框下拉*/
+.header .layout .right ul{
+	list-style: none;
+	width:300px;
+	border:1px solid #eee;
+	background:#fff;
+	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	top:40px;
+	left:0px;
+	display: none;
+}
+.header .layout .right ul li{
+	width:100%;
+	height:30px;
+	padding:5px 10px;
+	color:#A4A4A4;
+}
+.header .layout .right ul li~li:hover{
+	background: #eee;
+}

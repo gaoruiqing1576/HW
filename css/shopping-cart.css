@@ -47,6 +47,7 @@ a{
     height:100%;
     background: #f5f5f5;
     box-sizing: border-box;
+    padding:10px 0px;
 }
 .container .body .layout{
     width:1200px;
@@ -63,7 +64,8 @@ a{
     box-sizing: border-box;
 }
 .selectAll{ 
-    width: 150px;
+    width: 160px;
+    height:40px;
     float: left;
     line-height: 40px;
 }
@@ -110,6 +112,7 @@ a{
     height:100px;
     float:left;
     margin-right: 20px;
+    cursor: pointer;
 }
 .container .body .layout .layout_body .detail ul li{
     line-height: 20px;
@@ -195,11 +198,13 @@ a{
     background: #fff;
     border:1px solid #ddd;
     border-bottom: 0;
+    cursor: pointer;
 }
 .container .body .layout .layout_body .services .menu:hover .menu_detail{
     display: block;
     border:1px solid #ddd;
     border-top:0px;
+
 }
 .container .body .layout .layout_body .services .menu_detail div{
     margin:10px 0px;
@@ -242,7 +247,7 @@ a{
     float: left;
     line-height: 60px;
 }
-.container .body .layout .layout_footer .right div button{
+.container .body .layout .layout_footer .right div a{
     width:180px;
     height:60px;
     float:right;
@@ -250,9 +255,10 @@ a{
     border:0px;
     color:#fff;
     font-size:18px;
+    text-align: center;
 }
 .container .body .layout .layout_footer .right div.right_r{
-    width:250px;
+    width:200px;
     height: 60px;
     float:right;
     padding:10px;
@@ -268,9 +274,7 @@ a{
     float: left;
     margin:0px 10px;
 }
-.container .body .layout .layout_footer .right div:last-child img{
-    
-}
+
 .container .body .layout .layout_footer .right div:last-child div{
     float: left;
 }
@@ -288,7 +292,6 @@ a{
     background: #fff;
     color: #a4a4a4;
     font-size: 14px;
-    float: left;
 }
 .container .body .layout .delete ul{
     width:100%;
@@ -317,10 +320,10 @@ a{
 .container .body .layout .delete div{
     width:100%;
     height:25px;
-    float: left;
-    margin:0 auto;
     text-align: center;
     clear: both;
+    background: #f5f5f5;
+    padding:5px 0px;
 }
 .container .body .layout .delete div a{
     color: #a4a4a4;
@@ -335,56 +338,102 @@ a{
     clear: both;
     margin-top:20px;
 }
+.container .footer::before{
+    display: table;
+    content:"";
+}
 .container .footer h2{
     color: #3a3a3a;
     font-size: 18px;
     line-height: 1;
     margin: 30px 0 10px;
 }
-
-
-.recommend ul{
-	width:1210px;
-	float:left;
-	margin:0 auto;
+.recommend{
+    width:100%;
+    height:300px;
+    position: relative;
 }
-
-
 .recommend ul{
-	list-style: none;
+    width:1200px;
+    height:300px;
+	float:left;
+    margin:0 auto;
+    overflow: hidden;
+}
+.recommend ul{
+    list-style: none;
+    clear: both;
 }
 
 .recommend ul li{
-	width:230px;height:290px;
+	width:240px;height:290px;
 	text-align: center;
 	float:left;
-	margin-left: 12px;
-	margin-bottom: 12px;
+	padding-left: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
 }
+
 .recommend ul li img{
 	width:150px;height:150px;
-	margin-top:48px;
+	margin-top:40px;
 }
 
 /*放大*/
 .recommend ul li img:hover{
 	transform: scale(1.1)
 }
-
-
-.recommend ul li p:nth-child(2){
-	font-size: 14px;
-	color:#3A3A3A;
-	margin:12px 10px 0px;
+.recommend ul li p{
+    clear: both;
+    box-sizing: border-box;
 }
 .recommend ul li p:nth-child(2){
-	font-size: 12px;
-	color:#777;
-	margin:2px 20px 7px;
+    width:100%;
+    height:40px;
+	font-size: 14px;
+    color:#3a3a3a;
+    margin:6px auto 0px;
 	padding:0 10px;
 }
-.recommend ul li p:nth-child(3){
+.recommend ul li p:last-child{
+    width:100%;
+    height:20px;
 	font-size: 14px;
-	color:#D00218;
-	margin: 0;
+    color:#D00218;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+.recommend ul li button{
+	font-size: 14px;
+    color:#3a3a3a;
+    border:1px solid #000;
+    padding:3px;
+    background: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.recommend ul li button:hover{
+    background: #ca151e;
+    color:#fff;
+    cursor: pointer;
+}
+/*左右按钮*/
+.recommend .left,.recommend .right{
+    width:40px;
+    height:80px;
+    line-height: 70px;
+    position: absolute;
+    top:40%;
+    left:0px;
+    font-size: 50px;
+    color:#ddd;
+}
+.recommend .right{
+    position: absolute;
+    top:40%;
+    left:97%;
+}
+.recommend div:hover{
+    background: #bbb;
+    cursor: pointer;
 }
