@@ -46,38 +46,22 @@ a{
 	width:1200px;
 	margin:0 auto;
 }
+#demo1 div{
+	height:440px;
+}
+#demo2 div{
+	height:120px;
+}
 .carousel-inner{
 	border-radius:20px;
 }
 #demo1 .carousel-inner .carousel-item img{
 	height:440px;
 }
-.carousel-control-prev,
-.carousel-control-next {
-	width:4%; height:10%;
-	background-color:rgba(40,40,28,0.5);
-	top:45%;
-	border-radius:50%;
-}
 div.container #demo2{
 	height:120px;
 }
 
-.carousel-indicators li {
-	width:0.8rem;height: 0.8rem;
-	background-color:transparent;
-	border: 1px solid #fff;
-	border-radius: 50%;
-	margin:0 5px;
-}
-
-.carousel-indicators .active {
-	background-color:#fff;
-}
-
-#demo1,#demo2,.recommend,.floor-1,.floor-2,.floor-3,footer{
-	clear:both;
-}
 
 
 
@@ -343,12 +327,10 @@ div.container{
 }
 
 
-
-
-
 .floor-1 .top,.floor-2 .top,.floor-3 .top{
 	width:1200px;height:32px;
-	margin:15px auto;
+	margin:0 auto;
+	margin-top:20px;
 }
 
 .recommend h2,.floor-1 .top h2,.floor-2 .top h2,.floor-3 .top h2{
@@ -395,8 +377,8 @@ div.container{
 	line-height: 32px;
 }
 
-.recommend ul,.floor-1 .bottom,.floor-2 .bottom,.floor-3 .bottom{
-	width:1210px;
+.floor-1 .bottom,.floor-2 .bottom,.floor-3 .bottom{
+	width:1200px;
 	float:left;
 	margin:0 auto;
 }
@@ -414,7 +396,7 @@ div.container{
 	width:230px;height:290px;
 	text-align: center;
 	float:left;
-	margin-left: 12px;
+	margin-left: 10px;
 	margin-bottom: 12px;
 	position: relative;
 }
@@ -459,6 +441,47 @@ div.container{
 	margin: 0;
 }
 
+/*推荐左右按钮*/
+.recommend{
+	width:100%;
+	height:350px;
+	position: relative;
+	overflow: hidden;
+}
+.recommend ul{
+	height:300px;
+	float: left;
+	margin:0px;
+}
+.recommend .left,.recommend .right{
+    width:40px;
+    height:80px;
+    line-height: 70px;
+    position: absolute;
+    top:40%;
+    left:10px;
+    font-size: 50px;
+	color:#ddd;
+	border-radius:10px;	
+	background: #aaa;
+	opacity:.5;
+	cursor: pointer;
+	z-index:2;
+}
+.recommend .right{
+    position: absolute;
+    top:40%;
+	left:1161px;
+}
+.recommend div:hover{
+	background:#333;
+}
+
+
+
+
+
+/* 侧边栏 */
 
 .r_side{
 	width:38px;height:166px;

@@ -11,28 +11,28 @@ a{
     font-size:12px;
 }
 
-.container .header{
+.container .top{
     width:100%;
     height:70px;
     padding:10px 0;
 }
-.container .header .layout{
+.container .top .layout{
     width:1200px;
     height:100%;
     margin:0 auto;
 }
-.container .header .layout .left{
+.container .top .layout .left{
     width:256px;
     height:100%;
     float: left;
 }
-.container .header .layout .left img{
+.container .top .layout .left img{
     width:120px;
     height:36px;
     float: left;
     margin-top:16px;
 }
-.container .header .layout .left span{
+.container .top .layout .left span{
     width:110px;
     height:36px;
     float: left;
@@ -52,7 +52,6 @@ a{
 .container .body .layout{
     width:1200px;
     margin:0 auto;
-    padding-top:20px;
     box-sizing: border-box;
 }
 
@@ -128,7 +127,7 @@ a{
 }
 .container .body .layout .layout_body .detail ul li:nth-child(3) input{
     width:44px;
-    height:16px;
+    height:20px;
     float: left;
     text-align: center;
 }
@@ -177,7 +176,7 @@ a{
 }
 .container .body .layout .layout_body .services .menu_detail{
     width:500px;
-    height:100px;
+    height:128px;
     padding:5px;
     position: absolute;
     top:70px;
@@ -332,17 +331,17 @@ a{
 
 /*推荐搭配*/
 
-.container .footer{
+.container .bottom{
     width:1200px;
     margin:0 auto;
     clear: both;
     margin-top:20px;
 }
-.container .footer::before{
+.container .bottom::before{
     display: table;
     content:"";
 }
-.container .footer h2{
+.container .bottom h2{
     color: #3a3a3a;
     font-size: 18px;
     line-height: 1;
@@ -352,6 +351,7 @@ a{
     width:100%;
     height:300px;
     position: relative;
+    overflow: hidden;
 }
 .recommend ul{
     width:1200px;
@@ -363,6 +363,7 @@ a{
 .recommend ul{
     list-style: none;
     clear: both;
+
 }
 
 .recommend ul li{
@@ -386,6 +387,7 @@ a{
 .recommend ul li p{
     clear: both;
     box-sizing: border-box;
+    margin:0;
 }
 .recommend ul li p:nth-child(2){
     width:100%;
@@ -393,7 +395,9 @@ a{
 	font-size: 14px;
     color:#3a3a3a;
     margin:6px auto 0px;
-	padding:0 10px;
+    padding:0 10px;
+    background:#ddd;
+    border-radius: 0 0 10px 10px;
 }
 .recommend ul li p:last-child{
     width:100%;
@@ -409,13 +413,14 @@ a{
     border:1px solid #000;
     padding:3px;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 4px; 
     box-sizing: border-box;
 }
 .recommend ul li button:hover{
     background: #ca151e;
     color:#fff;
     cursor: pointer;
+    border:0;
 }
 /*左右按钮*/
 .recommend .left,.recommend .right{
@@ -423,14 +428,14 @@ a{
     height:80px;
     line-height: 70px;
     position: absolute;
-    top:40%;
+    top:38%;
     left:0px;
     font-size: 50px;
     color:#ddd;
 }
 .recommend .right{
     position: absolute;
-    top:40%;
+    top:38%;
     left:97%;
 }
 .recommend div:hover{

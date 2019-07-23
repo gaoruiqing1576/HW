@@ -1,0 +1,225 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    width:1200px;
+    margin:0 auto;
+}
+a{
+    color:#888;
+    text-decoration: none;
+}
+a:hover{
+    color:#f00;
+}
+
+/* 表单 */
+.nav{
+    width:1200px;
+    height:30px;
+    border:1px solid #f00;
+    margin:10px 0;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 27px;
+
+}
+.nav div:first-child{
+    width:70px;
+    height:100%;
+    color:#666;
+}
+.nav div.menu{
+    width:60px;
+    height:100%;
+    border:1px solid #f00;
+    background-image: url(../images/background/大于号_下.png);
+    background-position: center right;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    color:#333;
+    padding:0px 3px;
+    margin:0px 5px;
+    position: relative;
+}
+.nav div.menu ul{
+    width:320px;
+    background: #fff;
+    list-style: none;;
+    border:1px solid #ddd;
+    box-sizing: border-box;
+    position: absolute;
+    top:26px;
+    left:-1px;
+    display: none;
+    border-radius: 0px 0px 5px 5px;
+    z-index: 2;
+}
+.nav div.menu ul li{
+    width:140px;
+    font-size:14px;
+    color:#888;
+    float: left;
+    margin:5px;
+    margin-left:10px;
+}
+
+
+.nav div.menu:hover ul{
+    display: block;
+}
+
+/* 条件搜索 */
+.search{
+    width:1200px;
+    height:200px;
+    border:1px solid #f00;
+}
+
+
+.search .floor{
+    width:100%;
+    border:1px solid #f00;
+    display: flex;
+    position: relative;
+}
+.search .floor .left{
+    width:110px;
+    padding-left:10px;
+    background:#ddd;
+    line-height: 37px;
+    font-size: 16px;
+    color:#666;
+}
+.search .floor .right{
+    width:1090px;;
+}
+.search .floor .right ul{
+    width:900px;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+}
+.search .floor .right ul li{
+    height:100%;
+    padding:0px 20px;
+    float: left;
+}
+.search .floor .right ul li a{
+    color: #005aa0;
+}
+.search .floor .right ul li a:hover{
+    color: #f00;
+}
+.search .floor .right div{
+    float: right;
+}
+.search .floor .right div div{
+    width:60px;
+    height:30px;
+    margin:5px 10px;
+    line-height: 27px;
+    border:1px solid #ddd;
+    color:#666;
+}
+.search .floor .right div .more{
+    padding-left:7px;
+    cursor: pointer;
+}
+.search .floor .right div .chb{
+    background-image: url(../images/background/加号.png);
+    background-position: center left;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    padding-left:20px;
+    cursor: pointer;
+}
+ /*多选框*/
+ .search .multify{
+    width:100%;
+    border:3px solid #f0f;
+    display: flex;
+    box-shadow:0 0 15px #ff0;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background: #fff;
+    display:none;
+}
+.search .multify .left{
+    width:110px;
+    height:70px;
+    padding-left:10px;
+    background:#fffdee;
+    line-height: 37px;
+    font-size: 16px;
+    color:#666;
+    float: left;
+}
+.search .multify .right{
+    width:1000px;
+    float: left;
+}
+.search .multify .right ul{
+    width:900px;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+    text-align: center;
+}
+.search .multify .right ul li{
+    height:100%;
+    padding:0px 20px;
+    float: left;
+}
+.search .multify .right ul li:hover{
+    color:#f00;
+}
+.search .multify .right ul li a{
+    color: #005aa0;
+}
+.search .multify .right ul button.confirm{
+    width:52px;
+    height:25px;
+    border: 1px solid #DDD;
+    background: #f00;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.search .multify .right ul button.cansel{
+    width:52px;
+    height:25px;
+    border: 1px solid #DDD;
+    color: #666;
+    cursor: pointer;
+}
+
+
+
+
+/* 商品详情 */
+.detail{
+    width:1200px;
+    height:800px;
+    border:1px solid #f00;
+    margin:10px 0;
+    display: flex;
+}
+
+/* 左侧商品推荐 */
+.detail .detail_left{
+    width:200px;
+    height:800px;
+    border:1px solid #ff0;
+
+}
+.detail .detail_right{
+    width:1000px;
+    height:800px;
+    border:1px solid #f0f;
+
+}

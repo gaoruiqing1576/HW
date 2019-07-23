@@ -10,7 +10,7 @@ a:hover{
   }
 }
 .container>.layout{
-	width:100%;
+	width:1200px;
 	height:36px;
 	background-color: #f1f1f1;
 }
@@ -24,7 +24,9 @@ a{
 }
 .layout_left,.layout_right{
 	height:100%;
+	box-sizing: border-box;
 }
+
 .layout_left ul li{
 	padding:3px 3px;
 	float:left;
@@ -218,13 +220,13 @@ a{
 	height:40px;
 	color:#3A3A3A;
 	font-size:12px;
-	margin:0 auto;
+	margin:20px auto;
 	background-color: #f1f1f1;
 
 }
 .header .layout{
 	width:1200px;
-	height:50%;
+	height:100%;
 }
 .header .layout .left .logo img{
 	width:205px;
@@ -273,6 +275,7 @@ a{
     position: absolute;
     top:35px;
 	left:-273px;
+	z-index:3;
 }
 .computer_drop .phone{
 	left:-221px;
@@ -416,7 +419,7 @@ a{
 /*搜索框*/
 .header .layout .right{
 	width:300px;
-	height:30px;
+	height:100%;
 	position: relative;
 	float: right;
 }
@@ -452,7 +455,7 @@ a{
 .header .layout .right div{
 	position: absolute;
 	top:8px; 
-	left:141px;
+	left:180px;
 
 }
 .header .layout .right div a{
@@ -470,6 +473,7 @@ a{
 	top:40px;
 	left:0px;
 	display: none;
+	z-index: 2;
 }
 .header .layout .right ul li{
 	width:100%;
