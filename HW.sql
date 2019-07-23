@@ -88,15 +88,29 @@ CREATE TABLE HW_family(
 	fname VARCHAR(32)	#家族名称
 );
 /*插入家族数据*/
-INSERT INTO HW_family VALUES(1,"手机");
-INSERT INTO HW_family VALUES(2,"笔记本");
-INSERT INTO HW_family VALUES(3,"精品平板");
-INSERT INTO HW_family VALUES(4,"精选配件");
+INSERT INTO HW_family VALUES(NULL,"手机");
+INSERT INTO HW_family VALUES(NULL,"笔记本");
+INSERT INTO HW_family VALUES(NULL,"精品平板");
+INSERT INTO HW_family VALUES(NULL,"精选配件");
+
+#华为手机型号家族表的创建
+CREATE TABLE HW_phone_family(
+	p_fid INT PRIMARY KEY AUTO_INCREMENT,
+	fname VARCHAR(32)	#型号名称
+);
+INSERT INTO HW_phone_family VALUES(NULL,"HUAWEI Mate系列");
+INSERT INTO HW_phone_family VALUES(NULL,"荣耀系列");
+INSERT INTO HW_phone_family VALUES(NULL,"HUAWEI P系列");
+INSERT INTO HW_phone_family VALUES(NULL,"荣耀畅玩系列");
+INSERT INTO HW_phone_family VALUES(NULL,"HUAWEI nova系列");
+INSERT INTO HW_phone_family VALUES(NULL,"华为畅享系列");
+INSERT INTO HW_phone_family VALUES(NULL,"HUAWEI 麦芒系列");
 
 
 #华为手机表的创建
 CREATE TABLE HW_phone(
 	family_id INT,				#家族编号
+	phone_family_lid INT,       #手机型号编号   
 	pid INT PRIMARY KEY AUTO_INCREMENT,     #商品编号
 	title VARCHAR(64),			#主标题
 	subtitle VARCHAR(32),			#副标题
@@ -114,29 +128,30 @@ CREATE TABLE HW_phone(
 	details VARCHAR(1024),   		#产品详细说明
 
 	shelf_time BIGINT,          		#上架时间
-	sold_count INT,             		#已售出的数量
+	count INT,             		       #库存的数量
 	is_onsale BOOLEAN,          		#是否促销中 # 1--促销  2--不促销
-	FOREIGN KEY (family_id) REFERENCES HW_family(fid)
+	FOREIGN KEY (family_id) REFERENCES HW_family(fid),
+	FOREIGN KEY (phone_family_lid) REFERENCES HW_phone_family(p_fid)
 );
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI Mate 10",NULL,"3399.00","樱粉金","4GB+64GB","HUAWEI Mate 10（Ascend Mate）","800万","1200万（彩色）＋2000万（黑白）","4000mAh","5.9英寸","2560*1440像素","麒麟970","<div>","2017年10月",5,0);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI Mate 20 RS 保时捷设计","甄选进口牛皮材质，保时捷设计基因，卓然典藏的艺术珍品",12999.00,"瑞红","8GB|512GB|全网通版","HUAWEI Mate 20 RS 保时捷设计"," 2400万像素","4000万像素+2000万像素+800万像素","4200mAh","6.39 英寸","2k+ 3120 x 1440 像素","HUAWEI Kirin 980 （麒麟980）","<div>","2018年10月",5,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI Mate 20 Pro (UD) 麒麟980 AI芯片 超广角徕卡三摄 OLED曲面屏 屏内指纹","4000万超大广角徕卡三摄|手持超级夜景|40W超级快充",5499.00,"翡冷翠","8GB|128GB|全网通版","HUAWEI Mate 20 Pro (UD)","2400万像素"," 4000万像素","4200mAh","6.39英寸","2k+ 3120 x 1440 像素","HUAWEI Kirin 980 （麒麟980）","<div>","2018年10月",10,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀10 GT游戏加速 AIS手持夜景 AI摄影","麒麟970AI芯片|GPU Turbo|手持超级夜景","1999.00","幻影蓝","6GB|128GB|全网通","荣耀10","2400万像素","1600万像素＋2400万像素","3400mAh","5.84英寸","2280 x 1080 像素","HUAWEI Kirin 970 （麒麟970）","<div>","2018年4月",23,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀20 4800万超广角AI四摄 3200W美颜自拍","购机享多重豪礼①尊享6期免息②赠价值2019元专属好礼③赢全国任意飞机票④享碎屏险8折","2699.00","幻夜黑","全网通8GB+128GB","荣耀20","3200万像素","4800万像素","3750mAh","6.26英寸","FHD+ 2340×1080像素","HUAWEI Kirin 980","<div>","2019年6月",30,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀20i 3200万AI自拍 超广角三摄","优惠200，成交价1399元！",1599.00,"渐变红","全网通|6GB|64GB","荣耀20i","3200万像素","2400万像素+800万像素+200万像素","3400mAh","6.21英寸","2340*1080像素","Hisilicon Kirin 710*","<div>","2019年6月",30,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀Magic2 魔法全视屏 麒麟980AI芯片 屏内指纹 超广角AI三摄"," 麒麟980 AI处理器，后置2400万 AI三摄，40W安全超级快充",2699.00,"渐变黑","全网通|6GB|128GB","荣耀Magic2","1600万像素+ 200万像素+ 200万像素","1600万像素+2400万像素+1600万像素","3500mAh","6.39英寸","FHD+ 2340 x 1080 像素","HUAWEI Kirin 980（麒麟980）","<div>","2018年10月",7,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI P20 Pro 4000万徕卡三摄 AI摄影大师",NULL,4488.00,"亮黑色","6GB|64GB|全网通版","HUAWEI P20 Pro","2400万像素","4000万像素","4000mAh","6.1英寸","2240*1080像素","麒麟970","<div>","2018年4月",6,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI P30 麒麟980 超感光徕卡三摄 屏内指纹 双景录像","麒麟980芯片|6.1英寸OLED全面屏|屏内指纹|超感光徕卡三摄|5倍混合变焦","3988.00","亮色黑","全网通8GB+128GB","HUAWEI P30","3200万像素","4000万像素超感光摄像头+1600万像素超广角摄像头+800万像素长焦摄像头","3650mAh","6.1英寸","FHD+ 2340*1080 像素","HUAWEI Kirin 980","<div>","2019年4月",5,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 曲面屏 双景录像","麒麟980芯片|6.47英寸OLED曲面屏|4000万超感光徕卡四摄|4200毫安电池强劲续航","5488.00","亮色黑","全网通8GB+128GB","HUAWEI P30 Pro","3200万像素"," 4000万像素超感光摄像头+2000万像素超广角摄像头+800万像素超级变焦摄像头+华为Time-of-Flight（ToF）摄像头","4200mAh","6.47英寸","FHD+ 2340*1080 像素","HUAWEI Kirin 980","<div>","2019年4月",5,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀畅玩7 全网通版 2GB+16GB（黑色）","小巧全面屏 智能听筒 独立三卡槽",599.00,"黑色","全网通版|2GB|16GB","荣耀畅玩7","500万","1300万","3020mAh","5.45英寸","1440*720像素","PowerVR GE8100","<div>","2018年5月",2,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀畅玩8A 6.09英寸珍珠全面屏 震撼大音量","标配版",799.00,"极光蓝","全网通|3GB|32GB","荣耀畅玩8A","800万像素","1300万像素","3020mAh","6.088英寸","HD+ 1520x720 像素","Mediatek MT6765（联发科 Helio P35）","<div>","2019年1月",4,1);
-INSERT INTO HW_phone VALUES(1,NULL,"荣耀畅玩8C 两天一充 莱茵护眼 超清刘海屏","标配版",899.00,"极光蓝","全网通标配版|4GB|32GB","荣耀畅玩8C","800万像素","1300万像素","4000mAh","6.26英寸","HD+ 1520x720 像素","高通骁龙632","<div>","2018年10月",10,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI nova 3"," 易烊千玺代言，2400万海报级自拍，GPU Turbo 稳定高帧率游戏体验，6.3英寸全面屏3D炫彩机身",2599.00,"蓝楹紫","全网通|6GB|64GB","HUAWEI nova 3","2400万像素＋200万像素","1600万像素＋2400万像素","3750mAh","6.3英寸","2310 x 1080像素","HUAWEI Kirin 970 (麒麟970)","<div>","2018年7月",3,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI nova 4 4800万超广角三摄 自拍极点全面屏"," 6.4英寸极点全面屏，4800万超广角三摄，2500万海报级自拍，AI微塑美颜，来电视频铃声，AI视频专家自动剪辑主角故事。",2799.00,"贝母白","全网通|8GB|128GB","HUAWEI nova 4","2500万像素","4800万像素","3750mAh","6.4英寸","2310 x 1080像素","HUAWEI Kirin 970 (麒麟970)","<div>","2018年12月",9,1);
-INSERT INTO HW_phone VALUES(1,NULL,"华为畅享 9S 2400万超广角AI三摄 ","2400万超广角三摄，6.21英寸珍珠屏，EMUI 9.0系统",1599.00,"珊瑚红","全网通|4GB|64GB","华为畅享 9S","800万像素","2400万像素+1600万像素（广角）+200万像素","3400mAh","6.21英寸","2340*1080像素","Hisilicon Kirin 710*","<div>","2019年3月",5,1);
-INSERT INTO HW_phone VALUES(1,NULL,"华为畅享 MAX ","7.12英寸珍珠屏，5000mAh大电池，精雕皮纹工艺",1699.00,"琥珀棕","全网通|4GB|64GB","华为畅享 MAX","800万像素","1600万像素+200万像素","3750mAh","7.12英寸","FHD+ 1080x2244 像素","Qualcomm Snapdragon 660（高通 骁龙660）","<div>","2018年10月",5,1);
-INSERT INTO HW_phone VALUES(1,NULL,"HUAWEI 麦芒7 6GB+64GB 全网通版（铂光金）","①领券减400 ②赠PC保护壳（赠品有限，赠完即止）③享6期分期免息 ④购机赢法国豪华游",2199.00,"铂光金","全网通|6GB|64GB","HUAWEI 麦芒7","2400万像素（彩色）像素＋200万像素","2000万像素+200万像素","3750mAh","6.3英寸","FHD+ 1080 x 2340 像素","HUAWEI Kirin 710 (麒麟710)","<div>","2018年9月",7,1);
-INSERT INTO HW_phone VALUES(1,NULL,"华为麦芒8 6G+128G 全网通版（宝石蓝）","【16:08开始预订 订金50抵100】6.12日首销支付尾款和发货",1899.00,"宝石蓝","全网通|6GB|128GB","HUAWEI 麦芒 8","800万像素","2400万像素+1600万像素（广角）+200万像素","3400mAh","6.21英寸","2340*1080像素","Hisilicon Kirin 710*","<div>","2019年6月",5,1);
+INSERT INTO HW_phone VALUES(1,1,NULL,"HUAWEI Mate 20","全网通4G八核双摄手机NFC MATE20 PRO",3399.00,"樱粉金","4GB+64GB","HUAWEI Mate 10（Ascend Mate）","800万","1200万（彩色）＋2000万（黑白）","4000mAh","5.9英寸","2560*1440像素","麒麟970","<div>","2017年10月",5,0);
+INSERT INTO HW_phone VALUES(1,1,NULL,"HUAWEI Mate 20 RS 保时捷设计","甄选进口牛皮材质，保时捷设计基因，卓然典藏的艺术珍品",12999.00,"瑞红","8GB|512GB|全网通版","HUAWEI Mate 20 RS 保时捷设计"," 2400万像素","4000万像素+2000万像素+800万像素","4200mAh","6.39 英寸","2k+ 3120 x 1440 像素","HUAWEI Kirin 980 （麒麟980）","<div>","2018年10月",5,1);
+INSERT INTO HW_phone VALUES(1,1,NULL,"HUAWEI Mate 20 Pro (UD) 麒麟980 AI芯片 超广角徕卡三摄 OLED曲面屏 屏内指纹","4000万超大广角徕卡三摄|手持超级夜景|40W超级快充",5499.00,"翡冷翠","8GB|128GB|全网通版","HUAWEI Mate 20 Pro (UD)","2400万像素"," 4000万像素","4200mAh","6.39英寸","2k+ 3120 x 1440 像素","HUAWEI Kirin 980 （麒麟980）","<div>","2018年10月",10,1);
+INSERT INTO HW_phone VALUES(1,2,NULL,"荣耀10 GT游戏加速 AIS手持夜景 AI摄影","麒麟970AI芯片|GPU Turbo|手持超级夜景",1999.00,"幻影蓝","6GB|128GB|全网通","荣耀10","2400万像素","1600万像素＋2400万像素","3400mAh","5.84英寸","2280 x 1080 像素","HUAWEI Kirin 970 （麒麟970）","<div>","2018年4月",23,1);
+INSERT INTO HW_phone VALUES(1,2,NULL,"荣耀20 4800万超广角AI四摄 3200W美颜自拍","购机享多重豪礼①尊享6期免息②赠价值2019元专属好礼③赢全国任意飞机票④享碎屏险8折","2699.00","幻夜黑","全网通8GB+128GB","荣耀20","3200万像素","4800万像素","3750mAh","6.26英寸","FHD+ 2340×1080像素","HUAWEI Kirin 980","<div>","2019年6月",30,1);
+INSERT INTO HW_phone VALUES(1,2,NULL,"荣耀20i 3200万AI自拍 超广角三摄","优惠200，成交价1399元！",1599.00,"渐变红","全网通|6GB|64GB","荣耀20i","3200万像素","2400万像素+800万像素+200万像素","3400mAh","6.21英寸","2340*1080像素","Hisilicon Kirin 710*","<div>","2019年6月",30,1);
+INSERT INTO HW_phone VALUES(1,2,NULL,"荣耀Magic2 魔法全视屏 麒麟980AI芯片 屏内指纹 超广角AI三摄"," 麒麟980 AI处理器，后置2400万 AI三摄，40W安全超级快充",2699.00,"渐变黑","全网通|6GB|128GB","荣耀Magic2","1600万像素+ 200万像素+ 200万像素","1600万像素+2400万像素+1600万像素","3500mAh","6.39英寸","FHD+ 2340 x 1080 像素","HUAWEI Kirin 980（麒麟980）","<div>","2018年10月",7,1);
+INSERT INTO HW_phone VALUES(1,3,NULL,"HUAWEI P20 Pro 4000万徕卡三摄 AI摄影大师",NULL,4488.00,"亮黑色","6GB|64GB|全网通版","HUAWEI P20 Pro","2400万像素","4000万像素","4000mAh","6.1英寸","2240*1080像素","麒麟970","<div>","2018年4月",6,1);
+INSERT INTO HW_phone VALUES(1,3,NULL,"HUAWEI P30 麒麟980 超感光徕卡三摄 屏内指纹 双景录像","麒麟980芯片|6.1英寸OLED全面屏|屏内指纹|超感光徕卡三摄|5倍混合变焦","3988.00","亮色黑","全网通8GB+128GB","HUAWEI P30","3200万像素","4000万像素超感光摄像头+1600万像素超广角摄像头+800万像素长焦摄像头","3650mAh","6.1英寸","FHD+ 2340*1080 像素","HUAWEI Kirin 980","<div>","2019年4月",5,1);
+INSERT INTO HW_phone VALUES(1,3,NULL,"HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 曲面屏 双景录像","麒麟980芯片|6.47英寸OLED曲面屏|4000万超感光徕卡四摄|4200毫安电池强劲续航","5488.00","亮色黑","全网通8GB+128GB","HUAWEI P30 Pro","3200万像素"," 4000万像素超感光摄像头+2000万像素超广角摄像头+800万像素超级变焦摄像头+华为Time-of-Flight（ToF）摄像头","4200mAh","6.47英寸","FHD+ 2340*1080 像素","HUAWEI Kirin 980","<div>","2019年4月",5,1);
+INSERT INTO HW_phone VALUES(1,4,NULL,"荣耀畅玩7 全网通版 2GB+16GB（黑色）","小巧全面屏 智能听筒 独立三卡槽",599.00,"黑色","全网通版|2GB|16GB","荣耀畅玩7","500万","1300万","3020mAh","5.45英寸","1440*720像素","PowerVR GE8100","<div>","2018年5月",2,1);
+INSERT INTO HW_phone VALUES(1,4,NULL,"荣耀畅玩8A 6.09英寸珍珠全面屏 震撼大音量","标配版",799.00,"极光蓝","全网通|3GB|32GB","荣耀畅玩8A","800万像素","1300万像素","3020mAh","6.088英寸","HD+ 1520x720 像素","Mediatek MT6765（联发科 Helio P35）","<div>","2019年1月",4,1);
+INSERT INTO HW_phone VALUES(1,4,NULL,"荣耀畅玩8C 两天一充 莱茵护眼 超清刘海屏","标配版",899.00,"极光蓝","全网通标配版|4GB|32GB","荣耀畅玩8C","800万像素","1300万像素","4000mAh","6.26英寸","HD+ 1520x720 像素","高通骁龙632","<div>","2018年10月",10,1);
+INSERT INTO HW_phone VALUES(1,5,NULL,"HUAWEI nova 3"," 易烊千玺代言，2400万海报级自拍，GPU Turbo 稳定高帧率游戏体验，6.3英寸全面屏3D炫彩机身",2599.00,"蓝楹紫","全网通|6GB|64GB","HUAWEI nova 3","2400万像素＋200万像素","1600万像素＋2400万像素","3750mAh","6.3英寸","2310 x 1080像素","HUAWEI Kirin 970 (麒麟970)","<div>","2018年7月",3,1);
+INSERT INTO HW_phone VALUES(1,5,NULL,"HUAWEI nova 4 4800万超广角三摄 自拍极点全面屏"," 6.4英寸极点全面屏，4800万超广角三摄，2500万海报级自拍，AI微塑美颜，来电视频铃声，AI视频专家自动剪辑主角故事。",2799.00,"贝母白","全网通|8GB|128GB","HUAWEI nova 4","2500万像素","4800万像素","3750mAh","6.4英寸","2310 x 1080像素","HUAWEI Kirin 970 (麒麟970)","<div>","2018年12月",9,1);
+INSERT INTO HW_phone VALUES(1,6,NULL,"华为畅享 9S 2400万超广角AI三摄 ","2400万超广角三摄，6.21英寸珍珠屏，EMUI 9.0系统",1599.00,"珊瑚红","全网通|4GB|64GB","华为畅享 9S","800万像素","2400万像素+1600万像素（广角）+200万像素","3400mAh","6.21英寸","2340*1080像素","Hisilicon Kirin 710*","<div>","2019年3月",5,1);
+INSERT INTO HW_phone VALUES(1,6,NULL,"华为畅享 MAX ","7.12英寸珍珠屏，5000mAh大电池，精雕皮纹工艺",1699.00,"琥珀棕","全网通|4GB|64GB","华为畅享 MAX","800万像素","1600万像素+200万像素","3750mAh","7.12英寸","FHD+ 1080x2244 像素","Qualcomm Snapdragon 660（高通 骁龙660）","<div>","2018年10月",5,1);
+INSERT INTO HW_phone VALUES(1,7,NULL,"HUAWEI 麦芒7 6GB+64GB 全网通版（铂光金）","①领券减400 ②赠PC保护壳（赠品有限，赠完即止）③享6期分期免息 ④购机赢法国豪华游",2199.00,"铂光金","全网通|6GB|64GB","HUAWEI 麦芒7","2400万像素（彩色）像素＋200万像素","2000万像素+200万像素","3750mAh","6.3英寸","FHD+ 1080 x 2340 像素","HUAWEI Kirin 710 (麒麟710)","<div>","2018年9月",7,1);
+INSERT INTO HW_phone VALUES(1,7,NULL,"华为麦芒8 6G+128G 全网通版（宝石蓝）","【16:08开始预订 订金50抵100】6.12日首销支付尾款和发货",1899.00,"宝石蓝","全网通|6GB|128GB","HUAWEI 麦芒 8","800万像素","2400万像素+1600万像素（广角）+200万像素","3400mAh","6.21英寸","2340*1080像素","Hisilicon Kirin 710*","<div>","2019年6月",5,1);
 
 
 #华为手机图片表
@@ -223,6 +238,7 @@ INSERT INTO HW_laptop_pic VALUES(Null,1,"images/computer-pic/small/06_sm.png","i
 INSERT INTO HW_laptop_pic VALUES(Null,1,"images/computer-pic/small/07_sm.png","images/computer-pic/middle/07_md.png","images/computer-pic/big/07_bg.png");
 INSERT INTO HW_laptop_pic VALUES(Null,1,"images/computer-pic/small/08_sm.png","images/computer-pic/middle/08_md.png","images/computer-pic/big/08_bg.png");
 
+
 #首页商品表的创建
 CREATE TABLE HW_index_product(
 	pid INT PRIMARY KEY AUTO_INCREMENT,	
@@ -271,15 +287,37 @@ INSERT INTO HW_index_product VALUES(NULL,3,"【订金】荣耀平板5 10.1","最
 INSERT INTO HW_index_product VALUES(NULL,3,"华为平板 M5 青春版 8.0英寸","现货速发  享3期免息 ","images/index/tablet/c09.png",1149.00,"");
 INSERT INTO HW_index_product VALUES(NULL,3,"【订金】荣耀平板5 8英寸","最高直降200+6期免息 ","images/index/tablet/c10.png",1099.00,"");
 #精选配件
-INSERT INTO HW_index_product VALUES(NULL,4,"北通G1手游游戏手柄-蓝牙版","多指组合操作","images/index/accessories/d02.png",219.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"科大讯飞翻译机","51种语言在线翻译","images/index/accessories/d03.png",2799.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"BRASPORT双色硅胶表带","双色设计动感","images/index/accessories/d04.png",89.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"绿联 高清投屏转换器","智能Type-C拓展 小巧便捷 ","images/index/accessories/d05.png",159.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"MOMAX 手持挂脖风扇","美颜补妆镜 ","images/index/accessories/d06.png",69.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"耐翔 手游数据线","随心随意双面盲插 ","images/index/accessories/d07.png",29.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"M5 平板电脑皮套键盘","轻薄优雅 精巧设计 ","images/index/accessories/d08.png",299.00,"");
-INSERT INTO HW_index_product VALUES(NULL,4,"MOMAX 5A弯头编织数据线","炫彩编织 强悍耐用 ","images/index/accessories/d09.png",39.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"北通G1手游游戏手柄-蓝牙版","多指组合操作","images/index/accessory/d02.png",219.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"科大讯飞翻译机","51种语言在线翻译","images/index/accessory/d03.png",2799.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"BRASPORT双色硅胶表带","双色设计动感","images/index/accessory/d04.png",89.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"绿联 高清投屏转换器","智能Type-C拓展 小巧便捷 ","images/index/accessory/d05.png",159.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"MOMAX 手持挂脖风扇","美颜补妆镜 ","images/index/accessory/d06.png",69.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"耐翔 手游数据线","随心随意双面盲插 ","images/index/accessory/d07.png",29.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"M5 平板电脑皮套键盘","轻薄优雅 精巧设计 ","images/index/accessory/d08.png",299.00,"");
+INSERT INTO HW_index_product VALUES(NULL,4,"MOMAX 5A弯头编织数据线","炫彩编织 强悍耐用 ","images/index/accessory/d09.png",39.00,"");
 
+
+#精品推荐表的创建
+CREATE TABLE HW_recommend_product(
+	pid INT PRIMARY KEY AUTO_INCREMENT,			
+	title VARCHAR(64),				#商品标题
+	details VARCHAR(128),           #详细描述
+	pic VARCHAR(128),            	#图片
+	price DECIMAL(10,2),			#商品价格
+	href VARCHAR(128)
+);
+INSERT INTO HW_recommend_product VALUES(NULL,"HUAWEI Mate 20","购机赠耳机","images/index/phones/a06.png",3499.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"HUAWEI Mate 20 RS","购机赠耳机","images/index/phones/a07.png",12999.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"荣耀10","准点赠好礼","images/index/phones/a14.png",1799.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"HUAWEI MateBook X Pro 2019","最高直降200+6期免息 ","images/index/computers/b02.png",7999.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"HUAWEI MateBook E 2019 款","现货速发  享3期免息 ","images/index/computers/b03.png",4999.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"HUAWEI MateBook 14","最高直降200+6期免息 ","images/index/computers/b04.png",6999.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"荣耀平板5 10.1英寸","最高直降200+6期免息 ","images/index/tablet/c02.png",1199.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"华为平板 M5 青春版 10.1英寸","现货速发  享3期免息 ","images/index/tablet/c03.png",2349.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"荣耀平板5 8英寸","最高直降200+6期免息 ","images/index/tablet/c04.png",949.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"北通G1手游游戏手柄-蓝牙版","多指组合操作","images/index/accessory/d02.png",219.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"科大讯飞翻译机","51种语言在线翻译","images/index/accessory/d03.png",2799.00,"");
+INSERT INTO HW_recommend_product VALUES(NULL,"BRASPORT双色硅胶表带","双色设计动感","images/index/accessory/d04.png",89.00,"");
 
 
 #轮播图表的创建
@@ -290,20 +328,20 @@ CREATE TABLE HW_index_carousel(
 	href VARCHAR(128)           		#图片链接
 );
 #大轮播图
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/01.jpg","轮播广告商品1","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/02.jpg","轮播广告商品2","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/03.jpg","轮播广告商品3","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/04.jpg","轮播广告商品4","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/05.jpg","轮播广告商品5","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/06.jpg","轮播广告商品6","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/01.jpg","lg","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/02.jpg","lg","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/03.jpg","lg","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/04.jpg","lg","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/05.jpg","lg","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel01/06.jpg","lg","");
 #小轮播图
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/01.jpg","轮播广告商品1","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/02.jpg","轮播广告商品2","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/03.jpg","轮播广告商品3","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/04.jpg","轮播广告商品4","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/05.jpg","轮播广告商品5","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/06.jpg","轮播广告商品6","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/07.jpg","轮播广告商品7","");
-INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/08.jpg","轮播广告商品8","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/01.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/02.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/03.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/04.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/05.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/06.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/07.jpg","sm","");
+INSERT INTO HW_index_carousel VALUES(NULL,"images/carousel02/08.jpg","sm","");
 
 
