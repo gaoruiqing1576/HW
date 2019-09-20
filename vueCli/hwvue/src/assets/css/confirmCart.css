@@ -1,0 +1,111 @@
+.container .header .layout_cart .right div.confirm{
+    background-position: -42px -76px; 
+}
+
+.container .cart_address{
+    width:100%;
+    padding:20px;
+    background: #fff;
+    margin:20px 0px;
+ 
+}
+.container .cart_address div{
+    width:400px;
+    height:100px;
+    border:1px solid #f00;
+    text-align: center;
+    margin-top:20px;
+}
+.container .cart_address div a{
+    width:100%;
+    height:100%;
+}
+.container .cart_address div a{
+    line-height: 90px;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.container .add_address{
+    width:600px;
+    margin:0 auto;
+    text-align: center;
+    border:1px solid #f00;
+    background:#fff;
+    padding:20px;
+    position: fixed;
+    top:30%;
+    left:30%;
+    z-index:10
+}
+.container .add_address span{
+    position: relative; 
+
+}
+.container .add_address a{
+    position: absolute;
+    top:-25px;
+    right:-235px;
+    font-size: 30px;
+    color:#aaa;
+    cursor: pointer;
+}
+.container .add_address div.add_detail{
+    width:100%;
+    height:100%;
+}
+i{
+    color:#f00;
+}
+.container .add_address div.add_detail ul{
+    width:100%;
+    list-style: none;
+    margin:0px;
+}
+.container .add_address div.add_detail ul li{
+    width:100%;
+    margin:10px 0px;
+}
+.container .add_address div.add_detail ul li span{
+    display: inline-block;
+    width:20%;
+}
+.container .add_address div.add_detail ul li input{
+    display: inline-block;
+    width:70%;
+}
+.container .add_address div.add_detail ul li textarea{
+    width:70%;
+    margin:0 auto;
+    display: inline-block;
+}
+
+.container .add_address .btn_b{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+}
+
+.container .add_address .btn_b div:first-child{
+    font-size: 20px;
+    padding:5px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+}
+.container .add_address .btn_b div:first-child:hover{
+    border:1px solid #666;
+    cursor: pointer;
+}
+.container .add_address .btn_b div:last-child{
+    background: #f00;
+    color:#fff;
+    font-size: 20px;
+    padding:5px;
+    margin-left:30px;
+    border-radius: 5px;
+}
+.container .add_address .btn_b div:last-child:hover{
+    background: rgba(215,0,0);
+    cursor: pointer;
+}

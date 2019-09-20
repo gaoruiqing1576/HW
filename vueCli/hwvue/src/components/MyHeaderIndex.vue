@@ -1,0 +1,161 @@
+<template>
+    <div>
+        <div class="container p-0">
+			<div class="layout">
+				<div class="layout_left">
+					<ul class="d-flex">
+						<li><router-link to="/">首页</router-link></li>
+						<li>|</li>
+						<li><a href="#">华为官网</a></li>
+						<li>|</li>
+						<li><a href="#">荣耀官网</a></li>
+						<li>|</li>
+						<li><a href="#">花粉俱乐部</a></li>
+						<li>|</li>
+						<li><a href="#">V码(优购码) </a></li>
+						<li>|</li>
+						<li><a href="#">企业购</a></li>
+						<li>|</li>
+						<li><a href="#">Select Region</a></li>
+						<li>|</li>
+						<li class="drop_down_one">
+							<a href="#">更多精彩<img src="images/background/大于号_下.png"></a>
+							<div class="out">
+								<div><a href="#">EMUI</a></div>
+								<div><a href="#">应用市场</a></div>
+								<div><a href="#">华为云终端</a></div>
+								<div><a href="#">开发者联盟</a></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="layout_right">
+					<ul class="d-flex">
+						<li><a href="#">请登录</a></li>
+						<li>|</li>
+						<li><a href="#">注册</a></li>
+						<li>|</li>
+						<li><a href="#">我的订单</a></li>
+						<li>|</li>
+						<li class="drop_down_one">
+							<a href="#">客户服务<img src="images/background/大于号_下.png"></a>
+							<div class="out">
+									<div><a href="#">服务中心</a></div>
+									<div><a href="#">联系客服</a></div>
+							</div>
+						</li>
+						<li>|</li>
+						<li class="drop_down_two">
+							<a href="#">网站导航<img src="images/background/大于号_下.png"></a>
+							<div class="icon">
+								<div>
+									<p><img src="images/background/商城.png" alt=""></p>
+									<h2><a href="#">商城首页</a></h2>
+								</div>
+								<div>
+									<h2>频道</h2>
+									<span><a href="#">华为专区</a></span>
+									<span><a href="#">荣耀专区</a></span>
+									<span><a href="#">企业购</a></span>
+								</div>
+								<div>
+									<h2>产品</h2>
+									<span><a href="#">手机</a></span>
+									<span><a href="#">笔记本&平板</a></span>
+									<span><a href="#">热销配件</a></span>
+								</div>
+								<div>
+									<h2>增值服务</h2>
+									<span><a href="#">以旧换新</a></span>
+									<span><a href="#">礼品包装</a></span>
+									<span><a href="#">补购保障</a></span>	
+								</div>
+								<div>
+									<h2>会员</h2>
+									<span><a href="#">会员频道</a></span>
+								</div>
+							</div>	
+						<li>|</li>
+						</li>
+						<li  class="drop_down_three">
+							<a href="#">手机版<img src="images/background/大于号_下.png"></a>
+							<div class="icon">
+								<div>
+									<img src="images/background/华为商城APP.png">
+									<p>华为商城APP</p>
+								</div>
+								<div>
+									<img src="images/background/华为商城公众号.jpg">
+									<p>华为商城公众号</p>
+								</div>
+								<div>
+									<img src="images/background/微信小程序.jpg">
+									<p>微信小程序</p>
+								</div>
+							</div>
+						</li>
+						<li>|</li>
+						<li  class="drop_down_four">
+							<a href="#"><img src="images/background/购物车.png">购物车(0)</a>
+							<div>
+								<img src="images/background/空购物车.png">
+								<p>您的购物车是空的，赶紧选购吧~</p>
+							</div>	
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_index">
+				<div class="layout">
+					<div class="left">
+						<a href="#">
+							<img src="images/background/SXppnESYv4K11DBxDFc2.png" alt="">
+						</a>
+						<div class="naver">
+							<ul>
+								<li><a href="#"><img src="images/background/GrguiqzHENWVYHYWyHBM.png" alt=""></a></li>
+								<li><a href="#"><img src="images/background/AHwTUFRpDSQyuIZ7tLJz.png" alt=""></a></li>
+								<li><a href="#">华为P30</a></li>
+								<li><a href="#">荣耀20</a></li>
+								<li><a href="#">Mate 20系列</a></li>
+								<li><a href="#">荣耀V20</a></li>
+							</ul>	
+						</div>
+					</div>
+					<div class="right search" >
+						<button @click="search"></button>
+						<input class="text" type="text" placeholder="请输入您要搜索的内容">
+						<div>
+							<a href="#">nova 5 pro</a>
+							<a href="#">荣耀 20i</a>
+						</div>
+						<ul >
+							<li>热门搜索</li>
+							<li>nova 5i</li>
+							<li>荣耀20</li>
+							<li>HUWWEI P30</li>
+							<li>HUWWEI P30 pro</li>
+						</ul>
+					</div>	
+				</div>
+			</div>
+		</div>
+    </div>
+</template>
+<script>
+export default {
+    data(){
+		return{
+
+		}
+	},
+	methods: {
+		search(){
+			this.$router.push("/search")
+		}
+	},
+}
+</script>
+<style>
+    @import url("../assets/css/header.css");
+</style>

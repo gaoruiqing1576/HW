@@ -1,0 +1,508 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+a:hover{
+	text-decoration: none;
+	color:#f00;
+}
+
+.container {
+width: 1200px;
+}
+.container .layout{
+	width:1200px;
+	height:36px;
+	background-color: #f1f1f1;
+	margin-bottom: 10px;
+}
+
+a{
+	text-decoration: none;
+}
+ul{
+	margin:0px;
+}
+
+.container{
+	margin:0 auto;
+}
+.layout_left,.layout_right{
+	height:100%;
+	display: flex;
+}
+.layout_left ul li{
+	padding:3px 3px;
+	float:left;
+	color:#A4A4A4;
+}
+.layout_right ul li{
+	padding:3px 3px;
+	float:left;
+	color:#A4A4A4;
+}
+.layout ul{
+	list-style:none;
+}
+a{
+	color:#A4A4A4;
+	font-size:14px;
+}
+
+
+/*下拉菜单*/
+
+.drop_down_one{
+	position: relative;
+}
+.drop_down_one img{
+	 width:14px;
+	 height: 14px;;
+}
+
+.drop_down_one .out{
+	width:84px;
+	height:125px;;
+	text-align: center;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:28px;
+	left:0px;
+	border-radius: 5px;
+	border:1px solid #ddd;
+	border-top:0px;
+	z-index:2;
+}
+
+.drop_down_one .out div{
+	height: 20px;;
+	color:#A4A4A4;
+	font-size: 12px;
+	margin-top:7px;
+}
+
+
+.drop_down_one:hover .out{
+	display: block;
+}
+.drop_down_one:hover{
+	background: #fff;
+}
+
+/*下拉菜单--网站导航*/
+.drop_down_two{
+	position: relative;
+}
+.drop_down_two a img{
+	width:14px;
+	height: 14px;
+}
+.drop_down_two .icon{
+	height:130px;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:30px;
+	left:-420px;
+	border:1px solid #ddd;
+	border-top:0px;
+	z-index:2;
+}
+.drop_down_two .icon div:first-child{
+	text-align: center;
+}
+.drop_down_two .icon div{
+	width:100px;
+	height:100px;
+	padding:20px 10px 10px 10px;
+
+}
+
+.drop_down_two .icon div p img{
+	width:30px;
+	height: 30px;
+}
+
+.drop_down_two .icon h2{
+	font-size: 16px;
+	color:#333;
+}
+.drop_down_two .icon span{
+	font-size: 12px;
+	color:#A4A4A4;
+}
+.drop_down_two:hover .icon{
+	display: flex;	  /*绝对定位 会覆盖浮动*/
+}
+.drop_down_two:hover{
+	background: #fff;
+}
+
+/*下拉菜单--手机版*/
+.drop_down_three{
+	position: relative;
+}
+.drop_down_three a img{
+	width:14px;
+	height: 14px;
+}
+.drop_down_three .icon{
+	width:270px;
+	height: 388px;
+	box-sizing: border-box;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:29px;
+	left:-200px;
+	border:1px solid #ddd;
+	border-top:0px;
+	z-index:2;
+}
+.drop_down_three .icon div{
+	width:270px;
+	height: 129px;
+	padding:20px;
+}
+.drop_down_three .icon img{
+	width:90px;
+	height: 90px;
+	float: left;
+}
+.drop_down_three .icon p{
+	float: left;
+	padding:33px 0px 0px 20px;
+	margin:0px;
+	color:#3A3A3A;
+	font-size:16px;
+}
+
+.drop_down_three:hover .icon{
+	display:block;
+}
+.drop_down_three:hover{
+	background: #fff;
+}
+
+/*购物车下拉菜单*/
+.drop_down_four{
+	position: relative;
+}
+.drop_down_four a em{
+	color:#f00;
+}
+.drop_down_four a img{
+	width:12px;
+	height:12px;
+	margin:0px 2px 4px 0px;
+}
+.drop_down_four div{
+	width:300px;
+	height:200px;
+	background: #fff;
+	display: none;
+	position: absolute;
+	top:30px;
+	left:-216px;
+	border:1px solid #ddd;
+	border-top:0px;
+	z-index:2;
+}
+.drop_down_four div img{
+	width:70px;
+	height:70px;
+	margin:40px 0px 40px 100px;
+}
+.drop_down_four div p{
+	text-align: center;
+	color:#A3A3A3;
+	font-size:16px;
+}
+.drop_down_four:hover div{
+	display: block;
+}
+.drop_down_four:hover{
+	background: #fff;
+}
+
+
+
+
+
+.header_detail{
+	width:1200px;
+	height:40px;
+	color:#3A3A3A;
+	font-size:12px;
+	margin:0 auto;
+	background-color: #f1f1f1;
+
+}
+.header_detail .layout{
+	width:1200px;
+	display: flex;
+	margin-bottom: 10px;
+}
+.header_detail .layout .left{
+	width:70%;
+	display: flex;
+}
+.header_detail .layout .left .logo img{
+	width:205px;
+	height:100%;
+	margin-right:10px;
+}
+.header_detail .layout .left .naver ul{
+	height:100%;
+	margin:0px;
+}
+.header_detail .layout .left .naver ul li{
+	list-style:none;
+	padding:0 5px;
+	float:left;
+
+}
+.header_detail .layout .left .naver ul li .brand{
+	margin:0 5px;
+}
+
+
+.header_detail .layout .left .naver .brand{
+	color:#333;
+	font-size:16px;
+	line-height:39px;
+}
+
+
+
+
+/*下拉菜单*/
+.computer_drop{
+	position: relative;
+}
+
+.computer_drop .computer,
+.computer_drop .phone,
+.computer_drop .home,
+.computer_drop .wear,
+.computer_drop .accessory,
+.computer_drop .value_services{
+	width: 1200px;
+	height:270px;
+	background: #fff;
+	border-bottom:1px solid #ddd;
+	float: left;
+	display: none;
+    position: absolute;
+    top:35px;
+	left:-273px;
+	z-index:10
+}
+.computer_drop .phone{
+	left:-221px;
+}
+.computer_drop .home{
+	left:-477px;
+}
+.computer_drop .wear{
+	left:-388px;
+}
+.computer_drop .accessory{
+	left:-556px;
+}
+.computer_drop .value_services{
+	left:-639px;
+}
+
+.computer_drop .computer .top,
+.computer_drop .phone .top,
+.computer_drop .wear .top,
+.computer_drop .home .top,
+.computer_drop .accessory .top,
+.computer_drop .value_services .top{
+	width:1200px;height:32px;
+	margin:15px;
+}
+.computer_drop .computer .top ul,
+.computer_drop .phone .top ul,
+.computer_drop .wear .top ul,
+.computer_drop .home .top ul,
+.computer_drop .accessory .top ul,
+.computer_drop .value_services .top ul{
+	width:100%;height:32px;
+	float:left;
+	list-style: none;
+}
+
+.computer_drop .computer .top ul li,
+.computer_drop .phone .top ul li,
+.computer_drop .wear .top ul li,
+.computer_drop .home .top ul li,
+.computer_drop .accessory .top ul li,
+.computer_drop .value_services .top ul li{
+	float:left;
+	line-height: 32px;
+}
+.computer_drop .computer .top ul li a,
+.computer_drop .phone .top ul li a,
+.computer_drop .wear .top ul li a,
+.computer_drop .home .top ul li a,
+.computer_drop .accessory .top ul li a,
+.computer_drop .value_services .top ul li a{
+	font-size:14px;
+	color:#999;
+	margin-right: 5px;
+}
+
+.computer_drop .computer .bottom,
+.computer_drop .phone .bottom,
+.computer_drop .wear .bottom,
+.computer_drop .home .bottom,
+.computer_drop .accessory .bottom,
+.computer_drop .value_services .bottom{
+	width:1210px;
+	float:left;
+}
+
+.computer_drop .computer .bottom ul,
+.computer_drop .phone .bottom ul,
+.computer_drop .wear .bottom ul,
+.computer_drop .home .bottom ul,
+.computer_drop .accessory .bottom ul,
+.computer_drop .value_services .bottom ul{
+	list-style: none;
+
+}
+.computer_drop .computer .bottom ul li,
+.computer_drop .phone .bottom ul li,
+.computer_drop .wear .bottom ul li,
+.computer_drop .home .bottom ul li,
+.computer_drop .accessory .bottom ul li,
+.computer_drop .value_services .bottom ul li{
+	width:230px;height:190px;
+	text-align: center;
+	float:left;
+	margin-left: 12px;
+	box-shadow: 0 0 3px #ddd;
+	box-sizing: border-box;
+}
+.computer_drop .computer .bottom ul li img,
+.computer_drop .phone .bottom ul li img,
+.computer_drop .wear .bottom ul li img,
+.computer_drop .home .bottom ul li img,
+.computer_drop .accessory .bottom ul li img,
+.computer_drop .value_services .bottom ul li img{
+	width:150px;height:140px;
+	transition: all .5s linear;
+}
+.computer_drop .computer .bottom ul li img:hover,
+.computer_drop .phone .bottom ul li img:hover,
+.computer_drop .wear .bottom ul li img:hover,
+.computer_drop .home .bottom ul li img:hover,
+.computer_drop .accessory .bottom ul li img:hover,
+.computer_drop .value_services .bottom ul li img:hover{
+	transform: scale(1.1)
+}
+
+.computer_drop .computer .bottom ul li p:nth-child(2),
+.computer_drop .phone .bottom ul li p:nth-child(2),
+.computer_drop .wear .bottom ul li p:nth-child(2),
+.computer_drop .home .bottom ul li p:nth-child(2),
+.computer_drop .accessory .bottom ul li p:nth-child(2),
+.computer_drop .value_services .bottom ul li p:nth-child(2){
+	font-size: 14px;
+	color:#3A3A3A;
+	margin:12px 10px 0px;
+}
+.computer_drop .computer .bottom ul li p:nth-child(3),
+.computer_drop .phone .bottom ul li p:nth-child(3),
+.computer_drop .wear .bottom ul li p:nth-child(3),
+.computer_drop .home .bottom ul li p:nth-child(3),
+.computer_drop .accessory .bottom ul li p:nth-child(3),
+.computer_drop .value_services .bottom ul li p:nth-child(3){
+	font-size: 14px;
+	color:#D00218;
+	margin: 0;
+}
+.computer_drop:hover .computer,
+.computer_drop:hover .phone,
+.computer_drop:hover .wear,
+.computer_drop:hover .home,
+.computer_drop:hover .accessory,
+.computer_drop:hover .value_services{
+	display: block;
+}
+.computer_drop:hover{
+	background: #fff;
+}
+
+
+/*搜索框*/
+.header_detail .layout .right{
+	width:300px;
+	position:relative;
+	float: right;
+}
+.header_detail .layout .right:hover ul{
+	display: block
+}
+.header_detail .layout .right .text{
+	width:250px;height:30px;
+	float:right;
+	outline:0;border:0px;
+	border-top-left-radius:25px;
+	border-bottom-left-radius:25px;
+	margin-top:5px;
+	padding:10px;
+	background: #fff;
+
+}
+.header_detail .layout .right .text:hover{
+	border:1px solid #ccc;
+	border-right:0;
+}
+.header_detail .layout .right button{
+	width:40px;height:30px;
+	float:right;
+	outline:0;border:0px;
+	margin:5px 5px 0px 0px;
+	border-radius:0px 25px 25px 0px;
+	background-size: 25px 25px;
+	background-image:url(../../../public/images/background/搜索.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.header_detail .layout .right div{
+	position: absolute;
+	top:8px; 
+	left:141px;
+
+}
+.header_detail .layout .right div a{
+	color:#f00;
+}
+
+/*搜索框下拉*/
+.header_detail .layout .right ul{
+	list-style: none;
+	width:300px;
+	border:1px solid #eee;
+	background:#fff;
+	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	top:40px;
+	left:0px;
+	display: none;
+	z-index:10
+}
+.header_detail .layout .right ul li{
+	width:100%;
+	height:30px;
+	padding:5px 10px;
+	color:#A4A4A4;
+	cursor: pointer;
+}
+.header_detail .layout .right ul li~li:hover{
+	background: #eee;
+}

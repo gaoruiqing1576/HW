@@ -1,0 +1,873 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+	width:1200px;
+	margin:0 auto;
+}
+
+
+a{
+    color:#888;
+    text-decoration: none;
+}
+a:hover{
+    color:#f00;
+}
+
+/* 表单 */
+.search_nav{
+    width:100%;
+    height:30px;
+    border-bottom:1px dashed #ddd;
+    margin:10px 0;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 27px;
+
+}
+.search_nav div:first-child{
+    width:70px;
+    height:100%;
+    color:#666;
+}
+.search_nav div.menu{
+    width:60px;
+    height:100%;
+    border:1px solid #ddd;
+    background-image: url(../../../public/images/background/大于号_下.png);
+    background-position: center right;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    color:#333;
+    padding:0px 3px;
+    margin:0px 5px;
+    position: relative;
+}
+.search_nav div.menu ul{
+    width:320px;
+    background: #fff;
+    list-style: none;;
+    border:1px solid #ddd;
+    box-sizing: border-box;
+    position: absolute;
+    top:26px;
+    left:-1px;
+    display: none;
+    border-radius: 0px 0px 5px 5px;
+    z-index: 2;
+}
+.search_nav div.menu ul li{
+    width:140px;
+    font-size:14px;
+    color:#888;
+    float: left;
+    margin:5px;
+    margin-left:10px;
+}
+
+.search_nav div.menu:hover ul{
+    display: block;
+}
+.search_nav div.menu:hover{
+    background-image: url(../../../public/images/background/大于号_上.png);
+}
+
+/* 条件搜索 
+.search_page{
+    width:100%;
+    border:1px solid #f00;
+}
+
+.search_page .resolution,.search_page .operate_system,.search_page .option{
+    width:100%;
+    border:1px solid #f00;
+    display: flex;
+    position: relative;
+}
+.search_page .left{
+    width:110px;
+    padding-left:10px;
+    background:#ddd;
+    line-height: 37px;
+    font-size: 16px;
+    color:#666;
+    float: left;
+}
+.search_page .right{
+    width:1090px;;
+}
+.search_page .right ul{
+    width:900px;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+}
+.search_page .right ul li{
+    height:100%;
+    padding:0px 20px;
+    float: left;
+}
+.search_page .right ul li a{
+    color: #005aa0;
+}
+.search_page .right ul li a:hover{
+    color: #f00;
+}
+.search_page .right div{
+    float: right;
+}
+.search_page .right div div{
+    width:60px;
+    height:30px;
+    margin:5px 10px;
+    line-height: 27px;
+    border:1px solid #ddd;
+    color:#666;
+    float: left;
+}
+.search_page .right div .more{
+    padding-left:7px;
+    cursor: pointer;
+}
+.search_page .right div .chb{
+    background-image: url(../../../public/images/background/加号.png);
+    background-position: center left;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    padding-left:20px;
+    cursor: pointer;
+}
+*/
+ /*多选框
+ .search_page .multify{
+    width:100%;
+    border:3px solid #f0f;
+    box-shadow:0 0 15px #ff0;
+    margin-left:-1200px;
+    background: #fff;
+    display:none;
+    zoom: 1;
+    clear: both;
+}
+.search_page .multify .left{
+    width:110px;
+    height:70px;
+    padding-left:10px;
+    background:#fffdee;
+    line-height: 37px;
+    font-size: 16px;
+    color:#666;
+    float: left;
+}
+.search_page .multify .right{
+    width:1000px;
+    float: left;
+}
+.search_page .multify .right ul{
+    width:900px;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+    text-align: center;
+}
+.search_page .multify .right ul li{
+    height:100%;
+    padding:0px 20px;
+    float: left;
+}
+.search_page .multify .right ul li:hover{
+    color:#f00;
+}
+.search_page .multify .right ul li a{
+    color: #005aa0;
+}
+.search_page .multify .right ul button.confirm{
+    width:52px;
+    height:25px;
+    border: 1px solid #DDD;
+    background: #f00;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.search_page .multify .right ul button.cansel{
+    width:52px;
+    height:25px;
+    border: 1px solid #DDD;
+    color: #666;
+    cursor: pointer;
+}
+*/
+
+/*高级选项
+.option div.menu{
+    width:75px;
+    height:30px;
+    border:1px solid #ddd;
+    background-image: url(../../../public/images/background/大于号_下.png);
+    background-position: center right;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    color: #005aa0;
+    padding:3px 3px;
+    margin:4px 20px;
+    position: relative;
+}
+.option div.menu .menu_list1{
+    width:1200px;
+    height:60px;
+    background: #fff;
+    list-style: none;
+    line-height: 50px;
+    border:1px solid #ddd;
+    box-sizing: border-box;
+    position: absolute;
+    top:29px;
+    left:-133px;
+    border-radius: 0px 0px 5px 5px;
+    z-index: 2;
+	display:none;
+}
+.option div.menu .menu_list1 .chb{
+    width: 60px;
+    height: 30px;
+    border:1px solid #ddd;
+    background-image: url(../../../public/images/background/加号.png);
+    background-position: center left;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    padding-left:20px;
+    cursor: pointer;
+    float: right;
+    margin: 15px 20px;
+    line-height: 28px;
+}
+.option div.menu .menu_list1 li{
+    width:140px;
+    font-size:14px;
+    float: left;
+    margin:5px;
+    margin-left:10px;
+}
+.option div.menu .menu_list1 li a{
+    color: #005aa0;
+}
+
+.option div.menu:hover .menu_list1{
+    display: block;
+}
+.option div.menu:hover{
+    border:1px solid #aaa;
+    border-bottom:0;
+    background-image: url(../../../public/images/background/大于号_上.png);
+}
+
+
+.option div.menu div.d1{
+    width:1200px;
+    position: absolute;
+    top:30px;
+    left:-133px;
+    text-align: center;
+    border: 3px solid #f0f;
+    box-shadow: 0 0 15px #ff0;
+    padding:5px;
+    display: none;
+}
+.option div.menu div.d1 .menu_list2{
+    width:100%;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+    text-align: center;
+    background:#fff;
+
+}
+.option div.menu div.d1 .menu_list2 li{
+    height:100%;
+    padding:0px 20px;
+    float: left;
+}
+.option div.menu div.d1 .menu_list2 li:hover{
+    color:#f00;
+}
+.option div.menu div.d1 .menu_list2 li a{
+    color: #005aa0;
+}
+
+.option div.menu div.d1 button.confirm{
+    width:52px;
+    height:25px;
+    border: 1px solid #DDD;
+    background: #f00;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.option div.menu div.d1 button.cansel{
+    width:52px;
+    height:25px;
+    border: 1px solid #DDD;
+    color: #666;
+    cursor: pointer;
+}
+*/
+
+
+
+/* 商品详情 */
+.detail{
+    width:100%;
+    border:1px solid #f00;
+    margin:30px 0;
+    display: flex;
+    clear: both;
+}
+/* 左侧商品推荐 */
+.detail .detail_left{
+    width:200px;
+    border:1px solid #ff0;
+    box-sizing: border-box;
+}
+.detail .detail_left div{
+    width:100%;
+    height:36px;
+    line-height: 34px;
+}
+.detail .detail_left div h3{
+    font-size: 16px;
+    font-weight: 700;
+    float: left;
+    margin:10px 0px 5px 5px;
+    color:#666;
+}
+.detail .detail_left div span{
+    font-size: 8px;
+    float: right;
+    color:#aaa;
+    margin-right:15px;
+}
+.detail .detail_left ul{
+    width:100%;
+    box-sizing: border-box;
+    list-style: none;
+}
+.detail .detail_left ul li{
+    width:100%;
+    padding:2px 5px;
+    text-align: center;
+    margin-bottom:10px;
+    box-shadow: 0px 0px 3px #f60
+}
+.detail .detail_left ul li a{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.detail .detail_left ul li img{
+    width:160px;
+    height:160px;
+}
+.detail .detail_left ul li p:nth-child(2){
+    width:100%;
+    font-size: 14px;
+    color:#f00;
+    margin-bottom:3px;
+}
+.detail .detail_left ul li p:nth-child(3){
+    width:100%;
+    height:34px;
+    font-size: 12px;
+    color:#666;
+    padding:0px 10px;
+    overflow: hidden;
+    margin:0px
+}
+.detail .detail_left ul li p:nth-child(4){
+    width:100%;
+    font-size: 12px;
+    color:#666;
+    padding:6px 10px 0px;
+    margin:0px;
+    text-align: left;
+}
+.detail .detail_left ul li p:nth-child(4) span.count{
+    color:#005aa0;
+}
+.detail .detail_left ul li span.heart{
+    width:60px;
+    color:#666;
+    background-image: url(../../../public/images/background/heart.png);
+    background-position: center left;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    padding:5px 0px 5px 20px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    top:90%;right:0px;
+}
+.detail .detail_left ul li span.heart.on{
+    background-image: url(../../../public/images/background/heart_on.png);
+    color:#F00;
+}
+
+.detail .detail_left .btn_more{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background: #a00;
+    color:#fff;
+    cursor: pointer;
+}
+.detail .detail_left .btn_more span{
+    font-size: 25px;
+    color: #fff;
+}
+
+
+/*右侧商品详情*/
+.detail .detail_right{
+    width:1000px;
+    border:1px solid #f0f;
+}
+.detail .detail_right .detail_list{
+    width:100%;
+}
+.detail .detail_right .detail_list .top{
+    width:100%;
+    height:38px;
+    background:#aaa;
+}
+.detail .detail_right .detail_list .top .left{
+    float: left;
+    margin-left:10px;
+}
+.detail .detail_right .detail_list .top .left a{
+    width:62px;
+    height:34px;
+    padding:5px;
+    margin:2px 0px;
+    text-align: center;
+    background: #fff;
+    border:1px solid #000;
+    float: left;
+    box-sizing: border-box;
+}
+.detail .detail_right .detail_list .top .left a span:first-child{
+    font-size: 17px;
+}
+.detail .detail_right .detail_list .top .left a:hover{
+    background: rgba(255,0,0,.8);
+    color:#fff;
+}
+.detail .detail_right .detail_list .top .right{
+    float: right;
+}
+.detail .detail_right .detail_list .top .right span{
+    width:50px;
+    height:34px;
+    font-size: 20px;
+    float: left;
+    padding:5px;
+    margin:2px 10px;
+}
+.detail .detail_right .detail_list .top .right a{
+    width:60px;
+    height:34px;
+    padding:5px;
+    margin:2px 0px;
+    text-align: center;
+    background: #fff;
+    border:1px solid #000;
+	border-radius:5px;
+    float: left;
+    font-size: 30px;
+    line-height: 20px;
+}
+
+
+.detail .detail_right .detail_list ul,.detail .detail_right .like ul{
+    width:100%;
+    list-style: none;
+    box-sizing: border-box;
+}
+.detail .detail_right .detail_list ul li,.detail .detail_right .like ul li{
+    width:240px;
+    padding:12px 9px;
+    float: left;
+    text-align: center;
+    margin-right: 9px;
+    margin-top: 10px;
+    position: relative;
+}
+.detail .detail_right .detail_list ul li a,.detail .detail_right .like ul li a{
+    width:100%;
+}
+.detail .detail_right .detail_list ul li div,.detail .detail_right .like ul li div{
+    width:65px;
+    height:30px;
+    background: #333;
+    position: absolute;
+    top:0px;
+    left:67%;
+    box-sizing: border-box;
+    transition: all .3s linear;
+    display: none;
+}
+.detail .detail_right .detail_list ul li div p,.detail .detail_right .like ul li div p{
+    width:30px;
+    height:30px;
+    float: left;
+    font-size: 24px;
+    line-height: 26px;
+    color:#cdcdcd;
+    cursor: pointer;
+}
+.detail .detail_right .detail_list ul li div span,.detail .detail_right .like ul li div span{
+    font-size: 14px;
+    color:#cdcdcd;
+    float: left;
+    margin:5px 0px;
+}
+.detail .detail_right .detail_list ul li img,.detail .detail_right .like ul li img{
+    width:220px;
+    height:220px;
+}
+.detail .detail_right .detail_list ul li p:hover,.detail .detail_right .like ul li p:hover{
+    color:#f00;
+}
+
+.detail .detail_right .detail_list ul li:hover,.detail .detail_right .like ul li:hover{
+    box-shadow: 0 0 5px #ddd;
+}
+.detail .detail_right .detail_list ul li:hover div,.detail .detail_right .like ul li:hover div{
+    display: block;
+    transform: translateY(12px);
+}
+.detail .detail_right .detail_list ul li p:nth-child(2),.detail .detail_right .like ul li p:nth-child(2){
+    width:100%;
+    font-size: 14px;
+    color:#f00;
+    margin-bottom:3px;
+}
+.detail .detail_right .detail_list ul li p:nth-child(3),.detail .detail_right .like ul li p:nth-child(3){
+    width:100%;
+    height:34px;
+    font-size: 12px;
+    color:#666;
+    padding:0px 10px;
+    overflow: hidden;
+    margin:0px;
+}
+.detail .detail_right .detail_list ul li p:nth-child(4),.detail .detail_right .like ul li p:nth-child(4){
+    width:100%;
+    font-size: 12px;
+    color:#666;
+    padding:6px 20px 0px;
+    margin:0px;
+    text-align: left;
+}
+.detail .detail_right .detail_list ul li p:nth-child(4) span,.detail .detail_right .like ul li p:nth-child(4) span{
+    color:#005aa0;
+    font-weight:600;
+}
+.detail .detail_right .detail_list ul li p:nth-child(4) img,.detail .detail_right .like ul li p:nth-child(4) img{
+    width:70px;
+    height:18px;
+    float:right;
+}
+.detail .detail_right .detail_list ul li p:nth-child(4) img,.detail .detail_right .like ul li p:nth-child(4) img{
+    color:#00f;
+
+}
+
+
+/*分页
+
+.detail .detail_right .page{
+    width:100%;
+    height:50px;
+    border:1px solid #f00;
+    clear: both;
+}
+.detail .detail_right .page div{
+    height:100%;
+    border:1px solid #f00;
+    float: right;
+    box-sizing: border-box;
+    padding:5px;
+}
+.detail .detail_right .page div button{
+    width:60px;
+    height:36px;
+    text-align: center;
+    margin:0px 10px;
+    border-radius:5px;
+    border:1px solid #f00;
+}
+.detail .detail_right .page div a{
+    padding:5px 12px;
+    border-radius:5px;
+    border:1px solid #f00;
+}
+
+.detail .detail_right .page div input{
+    width:36px;
+    height:36px;
+    text-align: center;
+    margin-left:10px;
+}
+*/
+
+.detail .detail_right .page{
+    width:100%;
+    height:50px;
+    clear: both;
+    margin:10px 0px;
+}
+.detail .detail_right .page ul{
+    height:100%;
+    float: right;
+    box-sizing: border-box;
+    padding:9px;
+    display: flex;
+    list-style:none;
+}
+
+.detail .detail_right .page ul li{
+    width:30px;
+    height:30px;
+    border-radius:5px;
+    border:1px solid #666;
+    margin:0px 5px;
+    line-height: 25px;
+    text-align: center;
+}
+.detail .detail_right .page ul li:first-child,.detail .detail_right .page ul li:last-child{
+    width:50px;
+    height:30px;
+    border-radius:5px;
+    margin:0px 5px;
+    line-height: 25px;
+    background: #aaa;
+}
+.detail .detail_right .page ul li:first-child.disabled{
+    background: #fff;
+}
+.detail .detail_right .page ul li:last-child.disabled{
+    background: #fff;
+}
+.detail .detail_right .page ul li.active{
+    background: #aaa;
+}
+.detail .detail_right .page ul li a{
+    display: inline-block;
+    width:100%;
+    height:100%;
+    color:#000;
+}
+
+
+/*没有搜索到数据*/
+.detail .detail_right .like{
+    width:100%;
+    display: none;
+}
+.detail .detail_right .like h1{
+    padding:0px 10px;
+}
+.detail .detail_right .like.on{
+    display: block;
+}
+.detail .detail_right .like .nofond{
+    width:100%;
+    height:100px;
+    text-align: center;
+    font-size: 30px;
+    line-height:100px;
+}
+.detail .detail_right h1{
+    margin:10px 0px;
+    font-size: 25px;
+}
+
+/*商品搜索*/
+.search .phone_model,.search .option,.search .phone_screen,.search .phone_processor,.search .phone_price{
+    width:100%;
+    height:46px;
+    display: flex;
+    position: relative;
+    border-bottom:1px dashed #ccc;
+}
+.search .left{
+    width:10%;
+    padding-left:20px;
+    background:#ddd;
+    line-height: 37px;
+    font-size: 16px;
+    color:#666;
+    float: left;
+}
+.search .right{
+    width:90%;
+}
+.search .right ul{
+    width:80%;
+    height:100%;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+    box-sizing: border-box;
+    margin:0px;
+    overflow: hidden;
+}
+.search .right ul li{
+    padding:2px 15px;
+    margin:2px 0px;
+    float: left;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.search .right ul li.on{
+    color:#f00;
+    background-image: url(../../../public/images/background/on.png);
+    background-position: bottom right;
+    background-repeat:no-repeat; 
+    border:1px solid #f60;
+}
+.search .right div{
+    width:20%;
+    height:100%;
+    float: right;
+}
+.search .right div div{
+    width:60px;
+    height:30px;
+    margin:5px 5px;
+    line-height: 27px;
+    border:1px solid #ddd;
+    color:#666;
+    float: left;
+    background-position: center left;
+    background-size:20px 20px;
+    background-repeat:no-repeat; 
+    padding-left:20px;
+    cursor: pointer;
+}
+.search .right div .more{
+    background-image: url(../../../public/images/background/大于号_下.png);
+}
+.search .right div .more.on{
+    background-image: url(../../../public/images/background/大于号_上.png);
+}
+.search .phone_model.on{
+    height:90px;
+}
+.search .right div .chb{
+    background-image: url(../../../public/images/background/加号.png);
+}
+
+/*多选框*/
+.search .multify{
+    width:100%;
+    border:3px solid #f0f;
+    box-shadow:0 0 15px #ff0;
+    background: #fff;
+    zoom: 1;
+    clear: both;
+    position: absolute;
+    left:0px;
+    top:0px;
+    z-index:2
+}
+.search .multify .left_more{
+    width:10%;
+    height:100%;
+    padding-left:10px;
+    background:#fffdee;
+    font-size: 16px;
+    color:#666;
+    float: left;
+}
+.search .multify .right_more{
+    width:90%;
+    float: left;
+}
+.search .multify .right_more ul{
+    width:100%;
+    list-style: none;
+    float: left;
+    line-height: 37px;
+    text-align: center;
+    margin:0;
+}
+.search .multify .right_more ul li{
+    height:100%;
+    padding:0px 20px;
+    float: left;
+}
+.search .multify .right_more ul li:hover{
+    color:#f00;
+}
+.search .multify .right_more ul li a{
+    color: #005aa0;
+}
+.search .multify .right_more ul button.confirm{
+    width:52px;
+    height:100%;
+    border: 1px solid #DDD;
+    background: #f00;
+    color: #fff;
+    cursor: pointer;
+    border-radius:5px;
+}
+.search .multify .right_more ul button.cansel{
+    width:52px;
+    height:100%;
+    border: 1px solid #DDD;
+    color: #666;
+    cursor: pointer;
+    border-radius:5px;
+    margin-left:20px;
+}
+
+
+.search .phone_price div.input,.search .phone_screen  div.input{
+    width:20%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0px;
+}
+.search .phone_price div input,.search .phone_screen div input{
+    width:40px;
+    height:25px;
+    margin:0px 5px;
+}
+
+.option select{
+    width:9%;
+    height:30px;
+    border:1px solid #ddd;
+    color: #005aa0;
+    padding:3px 3px;
+    margin:4px 20px;
+    background:#fff;
+}
+
+
+.recommend_research{
+    width:1200px;
+    margin:0px auto;
+}
+
